@@ -4,20 +4,26 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>jQuery Mobile Docs - Gallery of Form Controls</title>
-	<link rel="stylesheet"  href="../../../../themes/default/jquery.mobile-1.0.min.css" />
+	<!--
+	<link rel="stylesheet"  href="../../../../themes/default/jquery.mobile-1.0.css" />
+	-->
+	<link rel="stylesheet"  href="../../../../themes/metro/jquery.mobile.metro.theme.css" />
 	<script src="../../../../jqmobile-core/jquery.js"></script>
-	<script src="../../../../jqmobile-core/jquery.mobile-1.0.min.js"></script>
+	<script src="../../../../jqmobile-core/jquery.mobile-1.0.js"></script>
+	<script src="../../../../themes/themeswitcher/jquery.mobile.themeswitcher.js"></script>
 </head>
 <body>
 
-	<div data-role="page" class="type-interior">
+	<div data-role="page" class="type-interior" data-theme="a">
 
-		<div data-role="header" data-theme="f">
+		<div data-role="header" data-theme="a">
 		<h1>Forms</h1>		
 	</div><!-- /header -->
 
-	<div data-role="content">
+	<div data-role="content" data-theme="a">
 		<div class="content-primary">
+
+		<div id="jqm-themeswitcher"></div>
 
 		<form action="#" method="get">
 
@@ -187,7 +193,7 @@
 			</div>
 
 			<div data-role="fieldcontain">
-				<label for="select-choice-a" class="select">Choose shipping method:</label>
+				<label for="select-choice-a" class="select">Custom menu</label>
 				<select name="select-choice-a" id="select-choice-a" data-native-menu="false">
 					<option>Custom menu example</option>
 					<option value="standard">Standard: 7 day</option>
