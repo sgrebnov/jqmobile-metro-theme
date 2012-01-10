@@ -50,6 +50,18 @@
                     <TextBlock Height="Auto"   HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="textAreaLbl" Text="Textarea" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeSmall}" />                    
                     <TextBox Height="160" Name="textArea" Text="" AcceptsReturn="True" Width="Auto" TextWrapping="Wrap" />
 
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Text="Buttons" FontSize="{StaticResource PhoneFontSizeLarge}" />
+
+                    <Button Content="sample button" Height="Auto" HorizontalAlignment="Left" Margin="0" Name="casualButton" VerticalAlignment="Top" Width="Auto" />
+
+                    <Button Height="71" HorizontalAlignment="Left" Name="imageButton" Width="300" Padding="0">
+                        <StackPanel Orientation="Horizontal" Width="300">
+                            <TextBlock Name="imageButtonText" Text="right-icon button" Width="200" Margin="12,0,0,0" ManipulationStarted="imageButtonText_ManipulationStarted" ManipulationCompleted="imageButtonText_ManipulationCompleted" />
+                            <Image Source="Images/appbar.favs.rest.white.png" Name="imageButtonImage" />
+                        </StackPanel>
+                    </Button>
+
+
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="searchLbl" Text="Search input" FontSize="{StaticResource PhoneFontSizeSmall}"  />
                     <TextBox Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="search" Text="" VerticalAlignment="Top" Width="Auto" />                       
                     
@@ -133,16 +145,7 @@
                     </ListBox>
 
 
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Text="Buttons" FontSize="{StaticResource PhoneFontSizeLarge}" />
                     
-                    <Button Content="sample button" Height="Auto" HorizontalAlignment="Left" Margin="0" Name="casualButton" VerticalAlignment="Top" Width="Auto" />
-
-                    <Button Height="71" HorizontalAlignment="Left" Name="imageButton" Width="300" Padding="0">
-                        <StackPanel Orientation="Horizontal" Width="300">
-                            <TextBlock Name="imageButtonText" Text="right-icon button" Width="200" Margin="12,0,0,0" ManipulationStarted="imageButtonText_ManipulationStarted" ManipulationCompleted="imageButtonText_ManipulationCompleted" />
-                            <Image Source="Images/appbar.favs.rest.white.png" Name="imageButtonImage" />
-                        </StackPanel>
-                    </Button>                    
 
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Text="Dialogs" FontSize="{StaticResource PhoneFontSizeLarge}" />
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
