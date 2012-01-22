@@ -6,17 +6,21 @@
 </head> 
 <body> 
 
-<div data-role="page">
+<div data-role="page" data-overlay-theme="a">
 	
-		<div data-role="header" data-theme="d">
+		<div data-role="header" data-theme='a'>
 			<h1>Dialog caption</h1>
 
 		</div>
 
-		<div data-role="content" data-theme="c">
+		<div data-role="content" data-theme='a'>
 			<p>This is a dialog box</p>
-			<a href="forms-all.html" data-role="button" data-rel="back" data-theme="b">OK</a>       
-			<a href="forms-all.html" data-role="button" data-rel="back" data-theme="c">Cancel</a>    
+
+            <fieldset class="ui-grid-a">
+                <a href="forms-all.html" data-role="button" data-inline = 'true' data-rel="back" data-theme="a">OK</a>
+                <a href="forms-all.html" data-role="button" data-inline = 'true' data-rel="back" data-theme="a">Cancel</a>
+            </fieldset>
+
 		</div>
 
 	</div>

@@ -875,7 +875,7 @@ a.ui-link-inherit {
 /* Interaction cues
 -----------------------------------------------------------------------------------------------------------*/
 .ui-disabled {
-	opacity: 							.3;
+	opacity: 							1;
 }
 .ui-disabled,
 .ui-disabled a {
@@ -897,6 +897,18 @@ a.ui-link-inherit {
 	border-radius: 						9px;
 }
 
+.ui-bar-a .ui-icon {
+    background-image: url(images/icons-18-white.png) /*{global-icon-set}*/;
+}
+
+.ui-bar-b .ui-icon {
+    background-image: url(images/icons-18-black.png) /*{global-icon-set}*/;
+}
+
+.ui-icon-searchfield:after {
+    display: none;
+    visibility: collapse;
+}
 
 /* Alt icon color
 -----------------------------------------------------------------------------------------------------------*/
@@ -918,14 +930,15 @@ a.ui-link-inherit {
 	.ui-icon-plus, .ui-icon-minus, .ui-icon-delete, .ui-icon-arrow-r,
 	.ui-icon-arrow-l, .ui-icon-arrow-u, .ui-icon-arrow-d, .ui-icon-check,
 	.ui-icon-gear, .ui-icon-refresh, .ui-icon-forward, .ui-icon-back,
-	.ui-icon-grid, .ui-icon-star, .ui-icon-alert, .ui-icon-info, .ui-icon-home, .ui-icon-search, .ui-icon-searchfield:after, 
-	.ui-icon-checkbox-off, .ui-icon-checkbox-on, .ui-icon-radio-off, .ui-icon-radio-on {
+	.ui-icon-grid, .ui-icon-star, .ui-icon-alert, .ui-icon-info, .ui-icon-home, .ui-icon-search, .ui-icon-searchfield:after,
+	{
 		background-image: url(images/icons-36-white.png);
 		-moz-background-size: 776px 18px;
 		-o-background-size: 776px 18px;
 		-webkit-background-size: 776px 18px;
 		background-size: 776px 18px;
 	}
+
 	.ui-icon-alt {
 		background-image: url(images/icons-36-black.png);
 	}
@@ -933,10 +946,10 @@ a.ui-link-inherit {
 
 /* plus minus */
 .ui-icon-plus {
-	background-position: 	-0 50%;
+	background-position: 	4px 50%;
 }
 .ui-icon-minus {
-	background-position: 	-36px 50%;
+	background-position: 	-32px 50%;
 }
 
 /* delete/close */
@@ -995,32 +1008,61 @@ a.ui-link-inherit {
 }
 .ui-icon-checkbox-off {
 	background-position: 	-684px 50%;
+	background-image: none;
 }
 .ui-icon-checkbox-on {
-	background-position: 	-648px 50%;
+	background-image: url(images/checkbox.png);
+	background-size: 18px 15px;	
+	background-position: 	50% 50%;
+	
 }
 .ui-icon-radio-off {
 	background-position: 	-756px 50%;
+	background-image: none;
 }
 .ui-icon-radio-on {
-	background-position: 	-720px 50%;
+	background-image: url(images/radiobtn.png);
+	background-size: 10px 10px;
+	background-position: 	50% 50%;
 }
 
+.ui-disabled .ui-icon-checkbox-on{
+	background-image: url(images/checkbox-disabled.png);
+} 
+
+.ui-disabled .ui-icon-radio-on{
+	background-image: url(images/radiobtn-disabled.png);
+}
 
 /* checks,radios */
-.ui-checkbox .ui-icon {
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+.ui-checkbox .ui-icon, .ui-radio .ui-icon{
+	border-radius: 0px;
+	height: 21px;
+	width: 21px;
+	left: 0px !important;
+	box-shadow: none;
 }
-.ui-icon-checkbox-off,
-.ui-icon-radio-off {
-	background-color: transparent;	
+
+.ui-radio .ui-icon{
+	border-radius: .6em;
 }
-.ui-checkbox-on .ui-icon,
-.ui-radio-on .ui-icon {
-	background-color: #4596ce /*{global-active-background-color}*/; /* NOTE: this hex should match the active state color. It's repeated here for cascade */
+
+.ui-body-a .ui-checkbox.ui-disabled .ui-icon,.ui-body-a  .ui-radio.ui-disabled .ui-icon{
+	background-color: #808080;		
 }
+
+.ui-body-b .ui-checkbox.ui-disabled .ui-icon,.ui-body-b  .ui-radio.ui-disabled .ui-icon{
+	background-color: white;		
+	border: 2px solid #808080;
+	height: 17px;
+	width: 17px;
+}
+
+.ui-icon-checkbox-off,.ui-icon-radio-off,
+.ui-checkbox-on .ui-icon,.ui-radio-on .ui-icon {
+	background-color: #cccccc;	
+}
+
 
 /* loading icon */
 .ui-icon-loading {
@@ -1116,7 +1158,6 @@ a.ui-link-inherit {
 .ui-btn-corner-all {
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
-          background-clip: padding-box;
 }
 
 /* Overlay / modal
@@ -1228,9 +1269,41 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-loading .ui-mobile-viewport { overflow: hidden !important; }
 .ui-loading .ui-loader { display: block; }
 .ui-loading .ui-page { overflow: hidden;  }
-.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
-.ui-loader h1 { font-size: 15px; text-align: center; }
-.ui-loader .ui-icon { position: static; display: block; opacity: .9; margin: 0 auto; width: 35px; height: 35px; background-color: transparent; }
+.ui-loader {
+    display: none;
+    position: relative;
+    opacity: 1 !important;
+    z-index: 100;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 25%;
+    margin: -100px 0px 0px 0px;
+    padding: 0px 0px 0px 15px;
+    background-color: #202020;
+    border: none;
+    border-radius: 0px;
+    vertical-align: middle;
+}
+
+
+.ui-loader h1 {
+    font-size: 15px;
+    text-align: left;
+    color: white;
+    position: relative;
+    top: 40%;
+}
+.ui-loader .ui-icon {
+    position: static;
+    display: none;
+    visibility: collapse;
+    opacity: .9;
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
 
 /*fouc*/
 .ui-mobile-rendering > * { visibility: hidden; }
@@ -1564,8 +1637,8 @@ Built by David Kaneda and maintained by Jonathan Stark.
         opacity: 0;
     }
 }/* content configurations. */
-.ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d { overflow: hidden; }
-.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e { margin: 0; padding: 0; border: 0; float: left; min-height:1px;}
+.ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d { overflow: hidden; height: 100%;}
+.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e { margin: 0; padding: 0; border: 0; float: left; min-height:1px;height: 100%;}
 
 /* grid solo: 100 - single item fallback */
 .ui-grid-solo .ui-block-a { width: 100%; float: none; }
@@ -1593,7 +1666,7 @@ Built by David Kaneda and maintained by Jonathan Stark.
 }
 .ui-footer-duplicate, .ui-page-fullscreen .ui-fixed-inline { display: none; }
 .ui-page-fullscreen .ui-header, .ui-page-fullscreen .ui-footer { opacity: .9; }
-.ui-navbar { overflow: hidden;  }
+.ui-navbar { overflow: hidden;  height: 100%;}
 .ui-navbar ul, .ui-navbar-expanded ul { list-style:none; padding: 0; margin: 0; position: relative; display: block; border: 0;}
 .ui-navbar-collapsed ul { float: left; width: 75%; margin-right: -2px; }
 .ui-navbar-collapsed .ui-navbar-toggle { float: left; width: 25%; }
@@ -1667,6 +1740,61 @@ Built by David Kaneda and maintained by Jonathan Stark.
 .ui-footer .ui-btn-icon-bottom .ui-icon,
 .ui-bar .ui-btn-icon-bottom .ui-icon { bottom: 4px; }
 
+.ui-footer{
+    height: 45px;
+}
+
+.ui-footer .ui-btn {
+    border: none;
+    height: 100%;
+}
+
+.ui-footer .ui-icon{
+    border-radius: 1.5em;
+    border: 2px solid;
+    width:28px;
+    height:28px;
+    margin-top: 3px;
+}
+
+.ui-footer.ui-bar-a .ui-icon{
+    border-color: white;
+    background-color: #202020;
+}
+
+.ui-footer.ui-bar-b .ui-icon{
+    border-color: black;
+    background-color: #cccccc;
+}
+
+.ui-footer.ui-bar-a{
+    background-color: #202020;
+}
+
+.ui-footer.ui-bar-a .ui-btn{
+    background-color: #202020;
+    color: white;
+}
+
+.ui-footer.ui-bar-b .ui-btn{
+    background-color: #cccccc;
+    color: black;
+}
+
+.ui-footer.ui-bar-b{
+    background-color: #cccccc;
+}
+
+.ui-footer .ui-btn .ui-btn-inner{
+    font-size: 8pt;
+    height: 100%;
+    border: none;
+}
+
+.ui-footer .ui-btn .ui-btn-text{
+    display: none;
+    visibility: collapse;
+}
 /*hiding native button,inputs */
 .ui-btn-hidden { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-appearance: button; opacity: .1; cursor: pointer; background: #fff; background: rgba(255,255,255,0); filter: Alpha(Opacity=.0001); font-size: 1px; border: none; line-height: 999px; }
 .ui-collapsible { margin: .5em 0; }
@@ -1689,10 +1817,10 @@ Built by David Kaneda and maintained by Jonathan Stark.
 
 .ui-collapsible-set { margin: .5em 0; }
 .ui-collapsible-set .ui-collapsible { margin: -1px 0 0; }
-.ui-controlgroup, fieldset.ui-controlgroup { padding: 0; margin: .5em 0 1em; }
+.ui-controlgroup, fieldset.ui-controlgroup { padding: 0; margin: 0px; }
 .ui-bar .ui-controlgroup { margin: 0 .3em; }
 .ui-controlgroup-label { font-size: 16px; line-height: 1.4; font-weight: normal; margin: 0 0 .3em; }
-.ui-controlgroup-controls { display: block; width: 100%;}
+.ui-controlgroup-controls { display: block; width: auto;}
 .ui-controlgroup li { list-style: none; }
 .ui-controlgroup-vertical .ui-btn,
 .ui-controlgroup-vertical .ui-checkbox, .ui-controlgroup-vertical .ui-radio { margin: 0; border-bottom-width: 0;  }
@@ -1702,6 +1830,54 @@ Built by David Kaneda and maintained by Jonathan Stark.
 .ui-controlgroup-horizontal { padding: 0; }
 .ui-controlgroup-horizontal .ui-btn, .ui-controlgroup-horizontal .ui-select { display: inline-block; margin: 0 -5px 0 0; }
 .ui-controlgroup-horizontal .ui-checkbox, .ui-controlgroup-horizontal .ui-radio { float: left; margin: 0 -1px 0 0; }
+
+.ui-controlgroup-horizontal .ui-checkbox, .ui-controlgroup-horizontal .ui-radio{
+    margin: 0px !important;
+}
+
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn, .ui-controlgroup-horizontal .ui-radio .ui-btn {
+    margin: 0px;
+}
+
+.ui-body-a .ui-controlgroup-horizontal .ui-checkbox .ui-btn,.ui-body-a .ui-controlgroup-horizontal .ui-radio .ui-btn {
+    border: 2px solid white;
+}
+
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn-inner, .ui-controlgroup-horizontal .ui-radio .ui-btn-inner {
+
+}
+
+.ui-body-b .ui-controlgroup-horizontal .ui-checkbox .ui-btn,.ui-body-b .ui-controlgroup-horizontal .ui-radio .ui-btn {
+    border: 2px solid #202020;
+}
+
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn-text, .ui-controlgroup-horizontal .ui-radio .ui-btn-text {
+    margin-left: 0px;
+}
+
+.ui-body-a .ui-controlgroup-horizontal .ui-checkbox .ui-btn-active,.ui-body-a .ui-controlgroup-horizontal .ui-radio .ui-btn-active {
+    background-color: white;
+    color: black;
+}
+
+.ui-body-b .ui-controlgroup-horizontal .ui-checkbox .ui-btn-active,.ui-body-b .ui-controlgroup-horizontal .ui-radio .ui-btn-active {
+    background-color: #202020;
+    color: white;
+}
+
+.ui-controlgroup-horizontal .ui-checkbox.ui-disabled .ui-btn, .ui-controlgroup-horizontal .ui-radio.ui-disabled .ui-btn {
+    border: 2px solid #808080;
+}
+
+.ui-controlgroup-horizontal .ui-checkbox.ui-disabled .ui-btn.ui-checkbox-on, .ui-controlgroup-horizontal .ui-radio.ui-disabled .ui-btn.ui-radio-on {
+    background-color: #808080;
+    color: white;
+}
+
+.ui-controlgroup-horizontal .ui-checkbox.ui-disabled .ui-btn.ui-checkbox-on .ui-btn-text, .ui-controlgroup-horizontal .ui-radio.ui-disabled .ui-btn.ui-radio-on .ui-btn-text{
+    color: white;
+}
+
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn, .ui-controlgroup-horizontal .ui-radio .ui-btn,
 .ui-controlgroup-horizontal .ui-checkbox:last-child, .ui-controlgroup-horizontal .ui-radio:last-child { margin-right: 0; }
 .ui-controlgroup-horizontal .ui-controlgroup-last { margin-right: 0; }
@@ -1713,54 +1889,165 @@ Built by David Kaneda and maintained by Jonathan Stark.
 
 @media all and (min-width: 450px){
 	.ui-field-contain .ui-controlgroup-label { vertical-align: top; display: inline-block;  width: 20%;  margin: 0 2% 0 0;  }
-	.ui-field-contain .ui-controlgroup-controls { width: 60%; display: inline-block; }
+	.ui-field-contain .ui-controlgroup-controls { width: auto; display: inline-block; }
 	.ui-field-contain .ui-controlgroup .ui-select { width: 100%; } 
 	.ui-field-contain .ui-controlgroup-horizontal .ui-select { width: auto; }
 }	.ui-dialog { min-height: 480px; }
 .ui-dialog .ui-header, 
 .ui-dialog .ui-content, 
-.ui-dialog .ui-footer { 
-	max-width: 500px; 
-	margin: 10% auto 15px auto; 
-	width: 85%; 
-	position: relative; 
+.ui-dialog .ui-footer {
+	margin: 0px;
+	width: 100%;
+	position: relative;
+    border-radius: 0px;
+    color: white;
+    border: none;
+    box-shadow: none;
 }
 .ui-dialog .ui-header, 
 .ui-dialog .ui-footer  { 
 	padding: 0 15px; 
-	z-index: 10; 
+	z-index: 10;
 }
 .ui-dialog .ui-content { 
-	padding: 15px; 
+	padding: 0px 0px 0px 15px;
 }
 .ui-dialog .ui-content, 
 .ui-dialog .ui-footer { 
-	margin-top: -15px;  
+	margin-top: 0px;
+    font-size: 12pt;
 }
-.ui-checkbox, .ui-radio { position:relative;  margin: .2em 0 .5em; z-index: 1;  }
-.ui-checkbox .ui-btn, .ui-radio .ui-btn { margin: 0; text-align: left; z-index: 2; }
+
+.ui-dialog .ui-header, .ui-dialog .ui-footer, .ui-dialog .ui-content{
+    background-color: #202020;
+}
+
+.ui-dialog .ui-header .ui-btn{
+    display: none;
+    visibility: collapse;
+}
+
+.ui-dialog .ui-btn{
+    background-color: transparent;
+}
+
+.ui-dialog .ui-header .ui-title{
+    font-size: 17pt;
+    font-weight: bold;
+    margin: 30px 0px 5px 0px;
+    position: relative;
+    text-transform: none;
+}
+
+/*
+.ui-checkbox, .ui-radio { position:relative;  margin: .2em 0 .15em; z-index: 1;  }
+*/
+.ui-checkbox .ui-btn, .ui-radio .ui-btn { 
+	margin: 0; 
+	text-align: left; 
+	z-index: 2; 	
+	border: none;
+	font-weight: normal;
+}
+
 .ui-checkbox .ui-btn-inner, .ui-radio .ui-btn-inner { white-space: normal; }
 .ui-checkbox .ui-btn-icon-left .ui-btn-inner,.ui-radio .ui-btn-icon-left .ui-btn-inner { padding-left: 45px; }
 .ui-checkbox .ui-btn-icon-right .ui-btn-inner, .ui-radio .ui-btn-icon-right .ui-btn-inner { padding-right: 45px; }
-.ui-checkbox .ui-icon, .ui-radio .ui-icon { top: 1.1em; }
+
+.ui-checkbox .ui-icon, .ui-radio .ui-icon { 
+	top: .7em; 
+}
+
+.ui-checkbox .ui-btn-inner, .ui-radio .ui-btn-inner{
+	font-size: 12pt;
+	border: none;
+	text-transform: capitalize;
+}
+
+.ui-checkbox, .ui-radio { 
+	position:relative;  
+	margin: 20px 0px 20px 0px !important; 
+	z-index: 1;  
+	width: auto;
+}
+ 
+.ui-checkbox .ui-btn-text, .ui-radio .ui-btn-text{
+	margin-left: -15px;
+}
+
+.ui-body-a .ui-checkbox.ui-disabled .ui-btn-text, .ui-body-a .ui-radio.ui-disabled .ui-btn-text{
+	color: #808080;
+}
+
+.ui-body-b .ui-checkbox.ui-disabled .ui-btn-text, .ui-body-b .ui-radio.ui-disabled .ui-btn-text{
+	color: #808080;
+}
+
 .ui-checkbox .ui-btn-icon-left .ui-icon, .ui-radio .ui-btn-icon-left .ui-icon {left: 15px; }
 .ui-checkbox .ui-btn-icon-right .ui-icon, .ui-radio .ui-btn-icon-right .ui-icon {right: 15px; }
 /* input, label positioning */
-.ui-checkbox input,.ui-radio input { position:absolute; left:20px; top:50%; width: 10px; height: 10px;  margin:-5px 0 0 0; outline: 0 !important; z-index: 1; }.ui-field-contain { padding: 1.5em 0; margin: 0; border-bottom-width: 1px; overflow: visible; }
+.ui-checkbox input,.ui-radio input { position:absolute; left:0px; top:50%; width: 10px; height: 10px;  margin:-5px 0 0 0; outline: 0 !important; z-index: 1; }
+
+.ui-field-contain {
+    padding: .5em 0;
+    margin: 0;
+    border-bottom-width: 0px;
+    overflow: visible;
+}
+
 .ui-field-contain:first-child { border-top-width: 0; }
 @media all and (min-width: 450px){
 	.ui-field-contain { border-width: 0; padding: 0; margin: 1em 0; }
-}	.ui-select { display: block; position: relative; }
-.ui-select select { position: absolute; left: -9999px; top: -9999px; }
-.ui-select .ui-btn { overflow: hidden; }
+}
+
+.ui-select {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.ui-select select { position: absolute; left: -9999px; top: -9999px;}
+
+.ui-select .ui-btn-text{
+    text-align: left;
+    text-transform: none;
+    margin-top: 3px;
+}
+
+.ui-select .ui-icon{
+    display: none;
+    visibility: collapse;
+}
+
+.ui-select .ui-btn {
+    opacity: 1;
+    overflow: hidden;
+    background-color: #bfbfbf;
+    border: none;
+    color: black;
+    font-weight: normal;
+    margin: 0px;
+    height: 32px;
+}
+
+.ui-select .ui-btn.ui-disabled{
+    color: #808080;
+    border: 2px solid #808080;
+}
+
+.ui-body-a .ui-select .ui-btn.ui-disabled{
+    background-color: black;
+}
+
+.ui-body-b .ui-select .ui-btn.ui-disabled{
+    background-color: white;
+}
 
 
-.ui-select .ui-btn { opacity: 1; }
 
 /* Fixes #2588 — When Windows Phone 7.5 (Mango) tries to calculate a numeric opacity for a select—including “inherit”—without explicitly specifying an opacity on the parent to give it context, a bug appears where clicking elsewhere on the page after opening the select will open the select again. */
 .ui-select .ui-btn select { cursor: pointer; -webkit-appearance: button; left: 0; top:0; width: 100%;  min-height: 1.5em; min-height: 100%; height: 3em; max-height: 100%; opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); z-index: 2; }
 
-.ui-select .ui-disabled { opacity: .3; }
+.ui-select .ui-disabled { opacity: 1; }
 
 @-moz-document url-prefix() {.ui-select .ui-btn select { opacity: 0.0001; }}
 .ui-select .ui-btn select.ui-select-nativeonly { opacity: 1; text-indent: 0; }
@@ -1775,19 +2062,66 @@ label.ui-select { font-size: 16px; line-height: 1.4;  font-weight: normal; margi
 .ui-select .ui-btn-text, .ui-selectmenu .ui-btn-text { display: block; min-height: 1em; overflow: hidden; }
 .ui-select .ui-btn-text { text-overflow: ellipsis; }
 
-.ui-selectmenu { position: absolute; padding: 0; z-index: 1100 !important; width: 80%; max-width: 350px; padding: 6px; }
+.ui-selectmenu {
+    position: absolute;
+    padding: 6px;
+    z-index: 1100 !important;
+    width: 100%;
+    height: 100%;
+}
 .ui-selectmenu .ui-listview { margin: 0; }
 .ui-selectmenu .ui-btn.ui-li-divider { cursor: default; }
 .ui-selectmenu-hidden { top: -9999px; left: -9999px; }
 .ui-selectmenu-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%;  z-index: 99; }
 .ui-screen-hidden, .ui-selectmenu-list .ui-li .ui-icon { display: none; }
 .ui-selectmenu-list .ui-li .ui-icon { display: block; }
+
+.ui-selectmenu-list{
+    width: 100%;
+    min-height: 1000px;
+    margin: 0px !important;
+}
+
+.ui-body-a .ui-selectmenu-list{
+    background-color: #202020;
+}
+
+.ui-body-b .ui-selectmenu-list{
+    background-color: #bfbfbf;
+}
+
+.ui-selectmenu-list .ui-btn-text {
+    font-size: 24pt;
+
+}
+
+.ui-selectmenu-list li[aria-selected='true'] .ui-btn-text a{
+    color: #1BA1E2;
+}
+
+.ui-selectmenu-list .ui-btn-text a{
+    padding: .3em 0px !important;
+}
+
+.ui-selectmenu-list .ui-btn{
+    border:none;
+}
+
+.ui-selectmenu-list .ui-btn .ui-btn-inner{
+    border:none;
+}
+
+.ui-selectmenu-list .ui-btn .ui-btn-text{
+    text-transform: none;
+    font-weight: normal;
+}
+
 .ui-li.ui-selectmenu-placeholder { display: none; }
 .ui-selectmenu .ui-header .ui-title { margin: 0.6em 46px 0.8em; }
 
 @media all and (min-width: 450px){	
 	.ui-field-contain label.ui-select { vertical-align: top;  display: inline-block;  width: 20%;  margin: 0 2% 0 0; }
-	.ui-field-contain .ui-select { width: 60%; display: inline-block; }
+	.ui-field-contain .ui-select { width: 100%; display: inline-block; }
 }	
 
 /* when no placeholder is defined in a multiple select, the header height doesn't even extend past the close button.  this shim's content in there */
@@ -1795,25 +2129,46 @@ label.ui-select { font-size: 16px; line-height: 1.4;  font-weight: normal; margi
 input.ui-input-text, textarea.ui-input-text { background-image: none; padding: .4em; line-height: 1.4; font-size: 16px; display: block; width: 97%; background-color:#BFBFBF; border-radius: 0; border: 1px solid #BFBFBF; color: #3e3e3e;}
 input.ui-input-text { -webkit-appearance: none; }
 textarea.ui-input-text { height: 50px; -webkit-transition: height 200ms linear; -moz-transition: height 200ms linear; -o-transition: height 200ms linear; transition: height 200ms linear; }
-.ui-input-search { padding: 0 30px; background-image: none; position: relative; }
-.ui-icon-searchfield:after { position: absolute; left: 7px; top: 50%; margin-top: -9px; content: ""; width: 18px; height: 18px; opacity: .5; }
-.ui-input-search input.ui-input-text { border: none; width: 98%; padding: .4em 0; margin: 0; display: block; background: transparent none; outline: 0 !important; }
-.ui-input-search .ui-input-clear { position: absolute; right: 0; top: 50%; margin-top: -13px; }
+.ui-input-search {
+    padding: 0px;
+    background-image: none;
+    position: relative;
+    width: 100%;
+    height:32px;
+    border: 2px solid #bfbfbf;
+}
+.ui-icon-searchfield:after { position: absolute; left: 7px; top: 50%; margin-top: -9px; content: ""; width: 18px; height: 23px; opacity: .5; }
+.ui-input-search input.ui-input-text { border: none; width: 95%; padding: .2em .3em .3em .3em; margin: 0; display: block; background: transparent none; outline: 0 !important;}
+.ui-input-search .ui-input-clear { position: absolute; right: 0; top: 50%; margin-top: -13px; display: none;}
 .ui-input-search .ui-input-clear-hidden { display: none; }
+
+.ui-input-search{
+    border-radius: 0px;
+    background-color: #bfbfbf;
+}
+
+.ui-input-search.ui-focus{
+    border: 2px solid #666666;
+}
+
+
+.ui-input-search.ui-focus input.ui-input-text{
+    border: none;
+}
 
 /* orientation adjustments - incomplete!*/
 @media all and (min-width: 450px){
 	.ui-field-contain label.ui-input-text  { vertical-align: top; display: inline-block;  width: 20%;  margin: 0 2% 0 0 }
 	.ui-field-contain input.ui-input-text, 
 	.ui-field-contain textarea.ui-input-text, 
-	.ui-field-contain .ui-input-search { width: 60%; display: inline-block; } 
-	.ui-field-contain .ui-input-search { width: 50%; }
+	.ui-field-contain .ui-input-search { width: 100%; display: inline-block; }
+	.ui-field-contain .ui-input-search { width: 100%; }
 	.ui-hide-label input.ui-input-text, 
 	.ui-hide-label textarea.ui-input-text, 
-	.ui-hide-label .ui-input-search { padding: .4em; width: 97%; } 
-	.ui-input-search input.ui-input-text { width: 98%; /*echos rule from above*/ }
+	.ui-hide-label .ui-input-search { padding: .4em; width: 94%; }
+	.ui-input-search input.ui-input-text { width: 95%; /*echos rule from above*/ }
 }.ui-listview { margin: 0; counter-reset: listnumbering; }
-.ui-content .ui-listview { margin: -15px; }
+.ui-content .ui-listview { margin: 0px -15px -15px -15px; }
 .ui-content .ui-listview-inset { margin: 1em 0;  }
 .ui-listview, .ui-li { list-style:none; padding:0; }
 .ui-li, .ui-li.ui-field-contain { display: block; margin:0; position: relative; overflow: visible; text-align: left; border-width: 0; border-top-width: 1px; }
@@ -1864,27 +2219,220 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; } /* to avoid
     .ui-li .ui-btn-text { overflow:  visible; }
 }label.ui-slider { font-size: 16px; line-height: 1.4;  font-weight: normal; margin: 0 0 .3em; display: block; }
 input.ui-slider-input,
-.ui-field-contain input.ui-slider-input { display: inline-block; width: 50px; }
+.ui-field-contain input.ui-slider-input { 
+	display: none; 
+	width: 50px; 
+	visibility: collapse; 
+}
 select.ui-slider-switch { display: none; }
-div.ui-slider { position: relative; display: inline-block; overflow: visible; height: 15px; padding: 0; margin: 0 2% 0 20px; top: 4px; width: 60%; }
+div.ui-slider { 
+	position: relative; 
+	display: inline-block; 
+	overflow: visible; 
+	height: 8px; 
+	padding: 0; 
+	margin: 0px; 
+	top: 4px; 
+	width: 100%; 
+	border-radius: 0px;
+	background-color: #1BA1E2;
+	border: 0px;
+}
 div.ui-slider-switch { width: 99.8%; }
-a.ui-slider-handle { position: absolute; z-index: 10;  top: 50%; width: 28px; height: 28px; margin-top: -15px; margin-left: -15px; }
+a.ui-slider-handle { position: absolute; z-index: 10;  top: 50%; width: 28px; height: 28px; margin-top: -15px; margin-left: -15px; border: 0px;}
+
+.ui-body-a a.ui-slider-handle{
+	background-color: white;
+}
+
+.ui-body-b a.ui-slider-handle{
+	background-color: black;
+}
+
+div.ui-slider a.ui-slider-handle { 
+	position: absolute;
+	z-index: 10;  
+	top: 0px; 
+	width: 8px; 
+	height: 8px; 
+	margin-top: 0px; 
+	margin-left: 0px;
+	border: 0px;
+}
+
+div.ui-slider.ui-disabled{
+	background-color: #808080;
+}
+
+
 a.ui-slider-handle .ui-btn-inner { padding-left: 0; padding-right: 0; }
+
 @media all and (min-width: 480px){
 	.ui-field-contain label.ui-slider { vertical-align: top;  display: inline-block;  width: 20%;  margin: 0 2% 0 0; }
-	.ui-field-contain div.ui-slider { width: 43%; }
+	.ui-field-contain div.ui-slider { width: 100%; }
 }	
 
-div.ui-slider-switch { height: 32px;  overflow: hidden; margin-left: 0; }
-div.ui-slider-inneroffset { margin-left: 50%; position: absolute; top: 1px; height: 100%; width: 50%; }
+div.ui-slider-switch {
+    height: 22px;
+    overflow: hidden;
+    margin-left: 0;
+    width: 60px;
+    max-width: 60px;
+}
+
+.ui-body-a div.ui-slider-switch{
+    background-color: black;
+    border: 2px solid white;
+}
+
+.ui-body-b div.ui-slider-switch{
+    background-color: white;
+    border: 2px solid black;
+}
+
+div.ui-slider-inneroffset {
+    margin-left: 50%;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 50%;
+}
+
+ui.ui-body-a div.ui-slider-inneroffset {
+    background-color: black;
+}
+
+ui.ui-body-b div.ui-slider-inneroffset {
+    background-color: white;
+}
+
 a.ui-slider-handle-snapping { -webkit-transition: left 70ms linear; }
-div.ui-slider-labelbg { position: absolute; top:0; margin: 0; border-width: 0; }
-div.ui-slider-switch div.ui-slider-labelbg-a { width: 60%; height: 100%; left: 0; }
-div.ui-slider-switch div.ui-slider-labelbg-b { width: 60%; height: 100%; right: 0; }
+
+div.ui-slider-labelbg {
+    position: absolute;
+    top:0px;
+    margin: 0px;
+    border-radius: 0px;
+    height: 82%;
+    vertical-align: middle;
+}
+
+.ui-body-a div.ui-slider-labelbg {
+    border: 2px solid black;
+}
+
+.ui-body-b div.ui-slider-labelbg {
+    border: 2px solid white;
+}
+
+div.ui-slider-switch div.ui-slider-labelbg-a {
+    width: 60%;
+
+    left: 0;
+    background-color: #1BA1E2;
+}
+div.ui-slider-switch div.ui-slider-labelbg-b {
+    width: 60%;
+    right: 0;
+}
+
+.ui-body-a div.ui-slider-switch div.ui-slider-labelbg-b {
+    background-color: black;
+}
+
+.ui-body-b div.ui-slider-switch div.ui-slider-labelbg-b {
+    background-color: white;
+}
+
 .ui-slider-switch-a div.ui-slider-labelbg-a, .ui-slider-switch-b div.ui-slider-labelbg-b { z-index: -1; }
 .ui-slider-switch-a div.ui-slider-labelbg-b, .ui-slider-switch-b div.ui-slider-labelbg-a { z-index: 0; }
 
-div.ui-slider-switch a.ui-slider-handle { z-index: 20;  width: 101%; height: 32px; margin-top: -18px; margin-left: -101%; }
-span.ui-slider-label { width: 100%; position: absolute;height: 32px;  font-size: 16px; text-align: center; line-height: 2; background: none; border-color: transparent; }
-span.ui-slider-label-a { left: -100%;  margin-right: -1px }
-span.ui-slider-label-b { right: -100%;  margin-left: -1px }
+.ui-body-a .ui-slider-switch-b a.ui-slider-handle{
+    margin-left: -47% !important;
+}
+
+.ui-body-b .ui-slider-switch-b a.ui-slider-handle{
+    margin-left: -43% !important;
+}
+
+.ui-body-b .ui-slider-switch-a a.ui-slider-handle{
+    margin-left: -105% !important;
+}
+
+.ui-slider-switch-b div.ui-slider-labelbg-a{
+    width: 100% !important;
+}
+
+div.ui-slider-switch a.ui-slider-handle {
+    z-index: 20;
+    width: 35%;
+    height: 80%;
+    margin-top: 0px;
+    margin-left: -101%;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.ui-body-b div.ui-slider-switch a.ui-slider-handle {
+    height: 120%;
+    top: -5px;
+}
+
+span.ui-slider-label {
+    width: 50%;
+    position: absolute;
+    height: 80%;
+    top:2px;
+    margin-top: 0px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 2;
+    background: none;
+    border-color: transparent;
+    border-radius: 0px;
+    display: none;
+}
+span.ui-slider-label-a {
+    left: -100%;
+    margin-right: -1px;
+    background-color: yellow;
+    border: 2px solid black;
+}
+span.ui-slider-label-b {
+    right: -100%;
+    margin-left: -1px;
+    background-color: green;
+    border: 2px solid black;
+}
+
+div.ui-slider-switch.ui-disabled{
+    border: 2px solid #808080;
+}
+
+.ui-body-a div.ui-slider-switch.ui-disabled{
+    background-color: black;
+}
+
+.ui-body-b div.ui-slider-switch.ui-disabled{
+    background-color: white;
+}
+
+div.ui-slider-switch.ui-disabled a.ui-slider-handle{
+    background-color: #808080;
+}
+
+.ui-body-b div.ui-slider-switch.ui-disabled a.ui-slider-handle{
+    border-color: #808080;
+}
+
+.ui-body-a div.ui-slider-switch-a.ui-disabled div.ui-slider-labelbg-a {
+    background-color: black;
+}
+
+.ui-body-b div.ui-slider-switch-a.ui-disabled div.ui-slider-labelbg-a {
+    background-color: white;
+}
+
+div.ui-slider-switch-b.ui-disabled div.ui-slider-labelbg-a {
+    background-color: #808080;
+}
