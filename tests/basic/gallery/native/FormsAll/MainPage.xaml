@@ -54,24 +54,25 @@
 
                     <Button Content="sample button" Height="Auto" HorizontalAlignment="Left" Margin="0" Name="casualButton" VerticalAlignment="Top" Width="Auto" />
 
-                    <Button Height="71" HorizontalAlignment="Left" Name="imageButton" Width="300" Padding="0">
+                    <Button Height="71" HorizontalAlignment="Left" Name="imageButton" Width="300" Padding="0" IsEnabled="False">
                         <StackPanel Orientation="Horizontal" Width="300">
                             <TextBlock Name="imageButtonText" Text="right-icon button" Width="200" Margin="12,0,0,0" ManipulationStarted="imageButtonText_ManipulationStarted" ManipulationCompleted="imageButtonText_ManipulationCompleted" />
                             <Image Source="Images/appbar.favs.rest.white.png" Name="imageButtonImage" />
                         </StackPanel>
                     </Button>
 
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="horizontSliderLbl" Text="Slider" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <Slider Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="slider" VerticalAlignment="Stretch" Width="Auto" Value="7" />
+                    <Slider Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="sliderDisabled" VerticalAlignment="Stretch" Width="Auto" IsEnabled="False" Value="3" />
 
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="searchLbl" Text="Search input" FontSize="{StaticResource PhoneFontSizeSmall}"  />
                     <TextBox Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="search" Text="" VerticalAlignment="Top" Width="Auto" />                       
                     
                     <toolkit:ToggleSwitch Header="Switch" Height="Auto" Name="toggleSwitch1" Width="Auto" />
-                    
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="horizontSliderLbl" Text="Slider" FontSize="{StaticResource PhoneFontSizeSmall}" />                        
-                    <Slider Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="slider" VerticalAlignment="Stretch" Width="Auto" />                    
+                                       
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,0,0,0" Name="checkBoxLbl" Text="Checkboxes" FontSize="{StaticResource PhoneFontSizeSmall}" />
                     <CheckBox Content="Cheetos" Height="Auto" Name="checkBoxCheetos" />
-                    <CheckBox Content="Doritos" Height="Auto" Name="checkBoxDoritos" />
+                    <CheckBox Content="Doritos" Height="Auto" Name="checkBoxDoritos" IsEnabled="False" IsChecked="True" />
                     <CheckBox Content="Fritos" Height="Auto" Name="checkBoxFritos" />
                     <CheckBox Content="Sun Chips" Height="Auto" Name="checkBoxDoritosSunChips" />
                     
@@ -89,7 +90,7 @@
                     
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="radioButtonLbl" Text="Radiobuttons" FontSize="{StaticResource PhoneFontSizeSmall}" />
                     <RadioButton Content="Cat" Height="Auto" Name="radioButtonCat" />
-                    <RadioButton Content="Dog" Height="Auto" Name="radioButtonDog" />
+                    <RadioButton Content="Dog" Height="Auto" Name="radioButtonDog" IsEnabled="False" IsChecked="True" />
                     <RadioButton Content="Hamster" Height="Auto" Name="radioButtonHamster" />
                     <RadioButton Content="Lizard" Height="Auto" Name="radioButtonLizard" />
                     
@@ -124,8 +125,12 @@
                         <DataTemplate>
                                 <local:DividerTemplateSelector Content="{Binding}">                                    
                                     <local:DividerTemplateSelector.DividerSelector>                                        
-                                        <DataTemplate>                                            
-                                            <Grid Background="Red" Margin="0,10,0,0">
+                                        <DataTemplate>
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.Background>
+                                                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+                                                    </SolidColorBrush>
+                                                </Grid.Background>
                                                 <TextBlock Text="{Binding Title}" Foreground="White" Width="50" Height="50" FontSize="{StaticResource PhoneFontSizeLarge}" />                                                
                                             </Grid>                                            
                                         </DataTemplate>                                        
@@ -143,9 +148,6 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                     </ListBox>
-
-
-                    
 
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Text="Dialogs" FontSize="{StaticResource PhoneFontSizeLarge}" />
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
