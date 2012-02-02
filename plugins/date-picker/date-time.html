@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Date/Time picker</title>
+    <link rel="stylesheet"  href="../../themes/metro/jquery.mobile.metro.theme.css" />
+    <script src="../../jqmobile-core/jquery.js"></script>
+    <script src="../../jqmobile-core/jquery.mobile-1.0.js"></script>
+    <script src="js/mobiscroll-1.5.3.js" type="text/javascript"></script>
+    <link href="css/mobiscroll-1.5.3.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Date with external button
+            $('#date1').scroller({ mode: 'clickpick' });
+            // Time
+            $('#date2').scroller({ preset: 'time',mode: 'clickpick' });
+        });
+    </script>
+</head>
+
+<body>
+    <div data-role="page" data-theme="a" id="jqm-home">
+        <div data-role="header" data-theme="a">
+            <h1>Date/Time picker</h1>
+        </div>
+
+        <div data-role="content" data-theme="a">
+            <form id="testform">
+
+                <div data-role="fieldcontain">
+                    <label for="date1">Date</label>
+                    <input type="text" name="date1" id="date1" />
+                </div>
+
+                <div data-role="fieldcontain">
+                    <label for="date2">Time</label>
+                    <input type="text" name="date2" id="date2" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

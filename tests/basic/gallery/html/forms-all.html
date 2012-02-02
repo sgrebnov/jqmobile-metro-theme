@@ -15,15 +15,38 @@
 	<script src="../../../../themes/themeswitcher/jquery.globalstylesheet.js"></script>
 	<script src="../../../../themes/themeswitcher/jquery.mobile.themeswitcher.js"></script>
 
+<!--	
+
+
 	<script src="../../../../phonegap/phonegap-1.3.0.js"></script>
 	<script src="../../../../phonegap/phoneTheme.js"></script>
+-->
+
+<script type="text/javascript">
+
+// allows to use the page in NON phonegap environment
+if (typeof window.external.Notify !== "undefined") {
+
+	var head = document.getElementsByTagName("head")[0];
+
+	var sc1 = document.createElement("script");
+	sc1.src = "../../../../phonegap/phonegap-1.3.0.js";
+	(head || document.body).appendChild(sc1);
+	
+	
+	var sc2 = document.createElement("script");
+	sc2.src = "../../../../phonegap/phoneTheme.js";
+	(head || document.body).appendChild(sc2);
+}
+
+</script>
 
 </head>
 <body onload="$.mobile.fixedToolbars.setTouchToggleEnabled(false);">
 
 	<div data-role="page" class="type-interior" data-theme="a">
-
 		<div data-role="header" data-theme="a" data-position="fixed">
+        <span class="ui-app-title">App title</span>
 		<h1>Forms</h1>		
 	</div><!-- /header -->
 
@@ -132,7 +155,7 @@
 			         	<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2" checked="checked" disabled='disabled' />
 			         	<label for="radio-choice-2">Dog</label>
 
-			         	<input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"  />
+			         	<input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3" />
 			         	<label for="radio-choice-3">Hamster</label>
 
 			         	<input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4"  />
@@ -154,7 +177,7 @@
 
 			<div data-role="fieldcontain">
 				<label for="select-choice-1" class="select">Dropbox (few items)</label>
-				<select name="select-choice-1" id="select-choice-1">
+				<select name="select-choice-1" id="select-choice-1" >
 					<option value="standard">Standard: 7 day</option>
 					<option value="rush">Rush: 3 days</option>
 					<option value="express">Express: next day</option>

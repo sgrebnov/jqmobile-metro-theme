@@ -127,6 +127,7 @@
                 $(".ui-btn-active a.ui-link-inherit").globalcss('color', accentColor + ' !important');
                 $(".ui-selectmenu-list li[aria-selected='true'] .ui-btn-text a").globalcss('color', accentColor+ ' !important');
                 $(".ui-li-divider").globalcss('background-color', accentColor+ ' !important');
+                $("div.ui-slider-switch").globalcss('background-color', 'transparent !important');
                 $("div.ui-slider").globalcss('background-color', accentColor + ' !important');
                 $("div.ui-slider-switch div.ui-slider-labelbg-a").globalcss('background-color', accentColor+ ' !important');
 
