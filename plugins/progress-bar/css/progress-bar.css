@@ -1,0 +1,38 @@
+/*
+"Progress bar" plugin
+*/
+
+.ui-progress-bar{
+    width: 100%;
+    background-color: transparent;
+    height: 3px;
+    margin: 5px 0px;
+}
+
+.ui-progress-bg{
+    opacity: 0.2;
+    background-color: #1BA1E2;
+    height: 3px;
+    width: 100%;
+}
+
+.ui-progress-value{
+    background-color: #1BA1E2;
+    height: 3px;
+    margin-top: -3px;
+}
+
+/*
+indeterminate state
+*/
+.ui-progress-bar-indeterminate{
+    background-image: url(../Images/wait-indicator.gif);
+    height: 8px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.ui-progress-bar-indeterminate .ui-progress-bg,
+.ui-progress-bar-indeterminate .ui-progress-value{
+    opacity: 0;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Progress bar</title>
+    <link rel="stylesheet"  href="../../themes/metro/jquery.mobile.metro.theme.css" />
+    <link href="css/progress-bar.css" rel="stylesheet" type="text/css" />
+    <script src="../../jqmobile-core/jquery.js"></script>
+    <script src="../../jqmobile-core/jquery.mobile-1.0.js"></script>
+    <script src="js/progress-bar.js" type="text/javascript"></script>
+
+
+    <script>
+        $(function() {
+            $("input[type='text']").change(function () {
+                $('#progressBar1').data('progressbar').value($(this).val());
+            });
+
+            $('#getValBtn').click(function () {
+                document.getElementById('currentValue').innerHTML = $('#progressBar1').data('progressbar').value();
+            });
+
+            var keyStop = {
+                8: ":not(input:text, textarea, input:file, input:password)", // stop backspace = back
+                13: "input:text, input:password", // stop enter = submit
+
+                end: null
+            };
+
+            $('#input1').bind("keydown", function(event){
+                var selector = keyStop[event.which];
+                if(selector !== undefined && $(event.target).is(selector)) {
+                    $('#progressBar1').data('progressbar').value($('#input1').val());
+                    event.preventDefault(); //stop event
+                }
+                return true;
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+    <div data-role="header" data-theme="a">
+        <span class="ui-app-title">plugin demo</span>
+        <h1>Progress bar</h1>
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <form id="testform">
+
+            <div data-role="fieldcontain">
+                <label>Progress bar</label>
+                <div data-role='progress-bar' value='50' min='0' max='100' id="progressBar1"></div>
+                <label for="input1">set value</label>
+                <input type="text" name="name" id="input1" />
+                <a href="#" data-inline="true" data-role="button" id="getValBtn">get Value</a>
+                <br/>
+                <span id="currentValue"></span>
+                <br/>
+                <br/>
+                <label>Progress bar (indeterminate)</label>
+                <div data-role='progress-bar' indeterminate='true' value='1' min='0' max='100' id="progressBar2"></div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

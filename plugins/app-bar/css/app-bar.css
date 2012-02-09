@@ -1,6 +1,7 @@
 
-/*ui-application-bar*/
-
+/*
+Application-bar
+*/
 
 .ui-app-bar {
     position:absolute;
@@ -9,11 +10,11 @@
     z-index: 900;
 }
 
-.ui-body-a .ui-app-bar{
+.ui-app-bar-a{
     background: #202020;
 }
 
-.ui-body-b .ui-app-bar{
+.ui-app-bar-b{
      background: #cccccc;
  }
 
@@ -63,7 +64,6 @@ Button panel
     width: 29px;
     height: 29px;
     background-color: transparent;
-    background-size: 30px 30px;
     margin: 0px;
     left: 0px;
     top: 0px;
@@ -121,6 +121,14 @@ Menu
     font-weight: normal !important;
     text-transform: lowercase;
     border: none !important;
+}
+
+.ui-app-bar-a .ui-app-bar-menu ul .ui-link{
+    color: white;
+}
+
+.ui-app-bar-b .ui-app-bar-menu ul .ui-link{
+    color: black;
 }
 
 .ui-app-bar .ui-app-bar-menu ul li {

@@ -24,7 +24,7 @@ PhoneFontSizeHuge=140pt
 h1, h2, h3, h4, h5, h6
 {
     display: block;
-    font-family: Segoe WP Light;
+    font-family: Segoe WP Light, Segoe UI Light, Helvetica, san-serif;
     font-weight: bold;
     margin: 0px;
     min-height: 1.1em;
@@ -80,14 +80,14 @@ h4 > span
 .ui-bar-a {
 	background: 			black /*{a-bar-background-color}*/;
 	color: 					white /*{a-bar-color}*/;
-	font-family: Segoe WP;
+	font-family: Segoe WP, Segoe UI, Helvetica, san-serif;
 }
 .ui-bar-a, 
 .ui-bar-a input, 
 .ui-bar-a select, 
 .ui-bar-a textarea, 
 .ui-bar-a button {
-	font-family: Segoe WP /*{global-font-family}*/;
+	font-family: Segoe WP, Segoe UI, Helvetica, san-serif /*{global-font-family}*/;
 }
 
 .ui-bar-a .ui-link-inherit {
@@ -263,14 +263,14 @@ Collapsible
 .ui-bar-b {
 	background: 			white /*{a-bar-background-color}*/;
 	color: 					black /*{a-bar-color}*/;
-	font-family: Segoe WP;
+	font-family: Segoe WP, Segoe UI, Helvetica, san-serif;
 }
 .ui-bar-b,
 .ui-bar-b input,
 .ui-bar-b select,
 .ui-bar-b textarea,
 .ui-bar-b button {
-	font-family: Segoe WP /*{global-font-family}*/;
+	font-family: Segoe WP, Segoe UI, Helvetica, san-serif /*{global-font-family}*/;
 }
 .ui-bar-b .ui-link-inherit {
 	color: 	#fff /*{b-bar-color}*/;
@@ -771,7 +771,7 @@ Collapsible
 
 .ui-body-a, .ui-body-b,
 input, select, textarea, button {
-    font-family: Segoe WP /*{global-font-family}*/;
+    font-family: Segoe WP, Segoe UI, Helvetica, san-serif /*{global-font-family}*/;
     font-size: 15pt; /* PhoneFontSizeNormal */
 }
 
@@ -809,7 +809,7 @@ a.ui-link-inherit {
 	color: 					#fff /*{global-active-color}*/;
 	cursor: pointer;
 	text-decoration: none;
-	font-family: Segoe WP /*{global-font-family}*/;
+	font-family: Segoe WP, Segoe UI, Helvetica, san-serif /*{global-font-family}*/;
 }
 .ui-btn-active a.ui-link-inherit {
 	color: 					#1BA1E2 /*{global-active-color}*/;
