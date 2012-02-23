@@ -6,11 +6,13 @@
     width: 100%;
     background-color: transparent;
     height: 3px;
-    margin: 5px 0px;
+    margin: 3px 0px;
 }
 
+    /* IE7 doesn't support opacity prop so we use filter for it */
 .ui-progress-bg{
     opacity: 0.2;
+    filter: Alpha(Opacity=20);
     background-color: #1BA1E2;
     height: 3px;
     width: 100%;
@@ -25,14 +27,17 @@
 /*
 indeterminate state
 */
-.ui-progress-bar-indeterminate{
+.ui-progress-bar[indeterminate='true']{
     background-image: url(../Images/wait-indicator.gif);
-    height: 8px;
+    height: 9px;
+    margin: 0px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
-.ui-progress-bar-indeterminate .ui-progress-bg,
-.ui-progress-bar-indeterminate .ui-progress-value{
+/* IE7 doesn't support opacity prop so we use filter for it */
+.ui-progress-bar[indeterminate='true'] .ui-progress-bg,
+.ui-progress-bar[indeterminate='true'] .ui-progress-value{
     opacity: 0;
+    filter: Alpha(Opacity=0);
 }

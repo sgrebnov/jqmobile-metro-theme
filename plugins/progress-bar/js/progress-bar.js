@@ -4,35 +4,39 @@
 (function( $, undefined ) {
     $.widget( "mobile.progressbar", $.mobile.widget, {
 
+        options: {
+            indeterminate: false
+        },
+
         _create: function(){
+            var progressBar = this.element[0],
+                progressBackground = document.createElement("div"),
+                progressValue = document.createElement("div");
 
-            var self = this,
-                $progressBar = this.element,
-                $progressBg = $("<div class='ui-progress-bg' />").appendTo($progressBar),
-                $progressValue = $("<div class='ui-progress-value' />").appendTo($progressBar),
-                max = !isNaN(parseFloat($progressBar.attr("max")))?parseFloat($progressBar.attr("max")):100,
-                min = !isNaN(parseFloat($progressBar.attr("min")))?parseFloat($progressBar.attr("min")):0;
+            progressBar.className = "ui-progress-bar";
+            progressBackground.className = 'ui-progress-bg';
+            progressValue.className = 'ui-progress-value';
+            progressBar.appendChild(progressBackground);
+            progressBar.appendChild(progressValue);
 
-            $progressBar.addClass( "ui-progress-bar");
-            self.value($progressBar.attr("value")||0);
-
-            if($progressBar.attr('indeterminate')=='true'){
-                $progressBar.addClass('ui-progress-bar-indeterminate');
+            this.value(progressBar.getAttribute('value')||0);
+            if(this.options.indeterminate){
+                progressBar.setAttribute('indeterminate',true);
             }
         },
 
         value : function(newValue){
 
-            var $progressBar = this.element;
-            if(!newValue){
-                return $progressBar.attr("value");
+            var progressBar = this.element[0];
+            if(!newValue && newValue!=0){
+                return parseFloat(progressBar.getAttribute("value"));
             }
             var newValue = parseFloat(newValue);
             if(isNaN(newValue)){
                 return;
             }
-            var max = parseFloat($progressBar.attr("max")),
-                min = parseFloat($progressBar.attr("min"));
+            var max = !isNaN(parseFloat(progressBar.getAttribute("max")))?parseFloat(progressBar.getAttribute("max")):100,
+                min = !isNaN(parseFloat(progressBar.getAttribute("min")))?parseFloat(progressBar.getAttribute("min")):0;
 
             if( newValue < min ){
                 newValue = min;
@@ -41,9 +45,21 @@
                 newValue = max;
             }
 
-            $progressBar.attr("value",parseFloat(newValue));
+            progressBar.setAttribute("value",newValue);
             var width = newValue*100/max;
-            $progressBar.children(".ui-progress-value").width(width+'%');
+            progressBar.lastChild.style.width= width+'%';
+        },
+
+        indeterminate : function(isIndetermitate){
+
+            var progressBar = this.element[0];
+
+            if(isIndetermitate===true){
+                progressBar.setAttribute('indeterminate',true);
+            }else{
+                progressBar.setAttribute('indeterminate',false);
+            }
+
         }
 
     });
