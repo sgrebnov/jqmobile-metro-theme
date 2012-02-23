@@ -6545,7 +6545,6 @@ $.mobile.fixedToolbars = (function() {
 					stickyFooter = null;
 				}, 500);
 			}
-
 			$.mobile.fixedToolbars.show( true, this );
 		});
 
@@ -6563,12 +6562,10 @@ $.mobile.fixedToolbars = (function() {
 	function getOffsetTop( ele ) {
 		var top = 0,
 			op, body;
-
 		if ( ele ) {
 			body = document.body;
 			op = ele.offsetParent;
 			top = ele.offsetTop;
-
 			while ( ele && ele != body ) {
 				top += ele.scrollTop || 0;
 
@@ -6582,12 +6579,16 @@ $.mobile.fixedToolbars = (function() {
 		}
 		return top;
 	}
-
+    var isMobile = navigator.userAgent.toLowerCase().indexOf('iemobile')!=-1,
+        shift = 0;
+    if (isMobile){
+        shift = (typeof window.external.Notify !== "undefined")?34:7;
+    }
 	function setTop( el ) {
 		var fromTop = $(window).scrollTop(),
 			thisTop = getOffsetTop( el[ 0 ] ), // el.offset().top returns the wrong value on iPad iOS 3.2.1, call our workaround instead.
 			thisCSStop = el.css( "top" ) == "auto" ? 0 : parseFloat(el.css( "top" )),
-			screenHeight = window.innerHeight,
+            screenHeight = window.innerHeight+shift,
 			thisHeight = el.outerHeight(),
 			useRelative = el.parents( ".ui-page:not(.ui-page-fullscreen)" ).length,
 			relval;
@@ -6605,8 +6606,7 @@ $.mobile.fixedToolbars = (function() {
 			// relval = -1 * (thisTop - (fromTop + screenHeight) + thisCSStop + thisHeight);
 			// if ( relval > thisTop ) { relval = 0; }
 			relval = fromTop + screenHeight - thisHeight - (thisTop - thisCSStop );
-
-			return el.css( "top", useRelative ? relval : fromTop + screenHeight - thisHeight );
+            return el.css( "top", useRelative ? relval : fromTop + screenHeight - thisHeight);
 		}
 	}
 
