@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file is auto-generated, do not edit! -jm -->
+<GapSourceDictionary>
+    <FilePath Value="www\index.html"/>
+    <FilePath Value="www\jquery.globalstylesheet.js"/>
+    <FilePath Value="www\jquery.js"/>
+    <FilePath Value="www\jquery.mobile-1.0.js"/>
+    <FilePath Value="www\jquery.phonegap.metro.themeswitcher.js"/>
+    <FilePath Value="www\master.css"/>
+    <FilePath Value="www\phonegap-1.4.1.js"/>
+    <FilePath Value="www\phoneTheme.js"/>
+    <FilePath Value="www\themes\metro\jquery.mobile.metro.theme.css"/>
+    <FilePath Value="www\themes\metro\images\ajax-loader.png"/>
+    <FilePath Value="www\themes\metro\images\checkbox-disabled.png"/>
+    <FilePath Value="www\themes\metro\images\checkbox.png"/>
+    <FilePath Value="www\themes\metro\images\icons-18-black.png"/>
+    <FilePath Value="www\themes\metro\images\icons-18-white.png"/>
+    <FilePath Value="www\themes\metro\images\icons-36-black.png"/>
+    <FilePath Value="www\themes\metro\images\icons-36-white.png"/>
+    <FilePath Value="www\themes\metro\images\radiobtn-disabled.png"/>
+    <FilePath Value="www\themes\metro\images\radiobtn.png"/>
+    <FilePath Value="www\themes\metro\images\wait-indicator.gif"/>
+</GapSourceDictionary>
