@@ -1,11 +1,6 @@
 PhoneGap.addConstructor(function () {
 
-    // update the page as soon as it is ready
-    document.addEventListener("deviceready", function () {
-
-        navigator.plugins.jqueryThemeSwitch.applyDeviceTheme();
-        
-    }, false);
+    console.log("Installing jqueryThemeSwitch");
 
     navigator.plugins.jqueryThemeSwitch = {
 
@@ -51,6 +46,9 @@ PhoneGap.addConstructor(function () {
                     .addClass('ui-body-' + themeSwatch)
                     .attr('data-theme', themeSwatch);
 
+		// toggle button fix
+                $('.ui-toggle-button').removeClass('ui-toggle-button-a ui-toggle-button-b').addClass('ui-toggle-button-' + themeSwatch);
+
 
                 this.enableStylesheet("globalStyleSheet", true);
 
@@ -60,6 +58,8 @@ PhoneGap.addConstructor(function () {
                 $("div.ui-slider-switch").globalcss('background-color', 'transparent !important');
                 $("div.ui-slider").globalcss('background-color', theme.accentColor + ' !important');
                 $("div.ui-slider-switch div.ui-slider-labelbg-a").globalcss('background-color', theme.accentColor + ' !important');
+                $(".ui-progress-bg").globalcss('background-color', theme.accentColor + ' !important');
+                $(".ui-progress-value").globalcss('background-color', theme.accentColor + ' !important');
             }
             catch (ex) {
                 if (errorCallback)
@@ -100,6 +100,11 @@ PhoneGap.addConstructor(function () {
             }
 
         }
+    };
+    // update the page as soon as it is ready
+    document.addEventListener("deviceready", function () {
+        console.log("jqueryThemeSwitch: device ready, apply current theme");
+        navigator.plugins.jqueryThemeSwitch.applyDeviceTheme();
 
-    }
+    }, false);
 });
