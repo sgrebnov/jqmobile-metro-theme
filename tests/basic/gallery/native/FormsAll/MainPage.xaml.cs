@@ -52,12 +52,12 @@ namespace FormsAll
 
         private void toggleButton2_Checked(object sender, RoutedEventArgs e)
         {
-            toggleImage.Source = getImageSource("Images/pauseBlack.png");
+            
         }
 
         private void toggleButton2_Unchecked(object sender, RoutedEventArgs e)
         {
-            toggleImage.Source = getImageSource("Images/playWhite.png");
+            
         }
 
         private ImageSource getImageSource(string imageUri)
@@ -146,6 +146,16 @@ namespace FormsAll
             listPickerItems.Add("Express: next day");
             listPickerItems.Add("Overnight");
             listPicker1.ItemsSource = listPickerItems;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/PluginsPage.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/OtherControlPage.xaml", UriKind.Relative));
         }
 
     }

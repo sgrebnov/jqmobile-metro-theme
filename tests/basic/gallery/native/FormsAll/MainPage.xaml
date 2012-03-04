@@ -22,8 +22,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,0">
-            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="forms" Margin="12,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Width="Auto" HorizontalAlignment="Left" />
+            <TextBlock x:Name="ApplicationTitle" Text="APP TITLE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="forms" Margin="12,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"  Width="Auto" HorizontalAlignment="Left" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -33,15 +33,15 @@
             </Grid.RowDefinitions>                        
             <ScrollViewer Height="600">
                 <StackPanel>
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Name="formCaption" Text="form elements" VerticalAlignment="Stretch" FontSize="{StaticResource PhoneFontSizeLarge}" Width="Auto" FontStretch="Normal" Margin="12,0,0,0" />                                                                                            
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Name="formCaption" Text="Form elements" VerticalAlignment="Stretch" FontSize="{StaticResource PhoneFontSizeLarge}" Width="Auto" FontStretch="Normal" Margin="12,0,0,0" />                                                                                            
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="dummyParagraph" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." VerticalAlignment="Top" TextWrapping="Wrap" Width="Auto" />
                     
                     <TextBlock Margin="12,20,0,0" Text="h6/Small" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                    <TextBlock Margin="12,20,0,0" Text="h5/Normal" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-                    <TextBlock Margin="12,20,0,0" Text="h4/Medium" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-                    <TextBlock Margin="12,20,0,0" Text="h3/MediumLarge" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-                    <TextBlock Margin="12,20,0,0" Text="h2/Large" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-                    <TextBlock Margin="12,20,0,0" Text="h1/ExtraLarge" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h5/Normal" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h4/Medium" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h3/MediumLarge" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h2/Large" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h1/ExtraLarge" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                     
                     
                     <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="textInputLbl" Text="Text input" FontSize="{StaticResource PhoneFontSizeSmall}" />
@@ -159,48 +159,14 @@
                         <HyperlinkButton HorizontalAlignment="Left" Click="hyperlinkButton2_Click" Content="Open dialog" Name="hyperlinkButton2" Width="Auto" NavigateUri="#" />
                     </StackPanel>
 
-                    
-                    
-                    <TextBlock Text="There are some extra elements below. They have no analogues in jQM" Margin="0,100,0,0" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}" />
-
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="vertSliderLbl" Text="Vertical slider" FontSize="{StaticResource PhoneFontSizeSmall}" />
-                    <Slider Height="150" Name="slider2" Width="Auto" Value="4" IsDirectionReversed="False" Orientation="Vertical" BorderThickness="0" />
-
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="toggleButtonLbl" Text="Toggle button" FontSize="{StaticResource PhoneFontSizeSmall}" />
-                    <ToggleButton Height="71" HorizontalAlignment="Left" Name="toggleButton2" Width="250" Padding="0" Checked="toggleButton2_Checked" Unchecked="toggleButton2_Unchecked">
-                        <StackPanel Orientation="Horizontal" Width="250">
-                            <TextBlock Name="toggleText" Text="toggle button" Width="170" Margin="12,0,0,0" />
-                            <Image Source="Images/playWhite.png" Name="toggleImage" />
-                        </StackPanel>
-                    </ToggleButton>
-
-                    <TextBlock Height="Auto" HorizontalAlignment="Left" Margin="12,30,0,0" Name="dataPickerLbl" Text="Data picker" FontSize="{StaticResource PhoneFontSizeSmall}" />
-                    <toolkit:DatePicker Name="datePicker" />
-                    
-                    <TextBlock Height="Auto" HorizontalAlignment="Left" Margin="12,20,0,0" Name="timePickerLbl" Text="Time picker" FontSize="{StaticResource PhoneFontSizeSmall}" />
-                    <toolkit:TimePicker Name="timePicker" />
-                    
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="progressBarLbl" Text="Ptogress bar" FontSize="{StaticResource PhoneFontSizeSmall}" />
-                    <ProgressBar Height="4" Name="progressBar2" Width="Auto" Value="50" IsIndeterminate="False" Margin="0,10,0,0" />
-                    
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="progressBarIndLbl" Text="Ptogress bar (indeterminate)" FontSize="{StaticResource PhoneFontSizeSmall}" />                    
-                    <ProgressBar Height="4" Name="progressBar1" Width="Auto" IsIndeterminate="True" Margin="0,10,0,0" />
-                    
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="separatorLbl" Text="Separator" FontSize="{StaticResource PhoneFontSizeSmall}" />        
-                    <toolkit:Separator Name="separator" Background="White" />
-                    
-                    
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="passwordLbl" Text="Passwors box" FontSize="{StaticResource PhoneFontSizeSmall}" />
-                    <PasswordBox Height="71" Name="passwordBox" Width="Auto" />
-                    
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="autoCompleteLbl" Text="Auto complete box" FontSize="{StaticResource PhoneFontSizeSmall}" />
-                    <toolkit:AutoCompleteBox Name="autoCompleteBox" IsDropDownOpen="True" />                              
+                    <Button Content="plugins" Click="Button_Click"></Button>
+                    <Button Content="not implemented controls" Click="Button_Click_1"></Button>
+                             
                 </StackPanel>
             </ScrollViewer>
         </Grid>        
     </Grid>
  
-    <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.add.rest.png" Text="Add"/>

@@ -24,8 +24,8 @@ PhoneFontSizeHuge=140pt
 h1, h2, h3, h4, h5, h6
 {
     display: block;
-    font-family: Segoe WP Light, Segoe UI Light, Helvetica, san-serif;
-    font-weight: bold;
+    font-family: Segoe WP, Segoe UI Light, Helvetica, san-serif;
+    font-weight: normal;
     margin: 0px;
     min-height: 1.1em;
     outline: 0 none;
@@ -37,34 +37,34 @@ h1, h2, h3, h4, h5, h6
 
 h1
 {
-    font-size: 32pt; /* PhoneFontSizeExtraLarge */
+    font-size: 24pt; /* PhoneFontSizeExtraLarge */
 }
 
 h2
 {
-    font-size: 24pt; /* PhoneFontSizeLarge */
+    font-size: 19pt; /* PhoneFontSizeLarge */
     font-weight: normal;
 }
 
 h3
 {
-    font-size: 19pt; /* PhoneFontSizeMediumLarge */
+    font-size: 17pt; /* PhoneFontSizeMediumLarge */
 }
 
 h4
 {
-    font-size: 17pt; /* PhoneFontSizeMedium */
+    font-size: 15pt; /* PhoneFontSizeMedium */
     font-weight: normal;
 }
 
 h5
 {
-    font-size: 15pt; /* PhoneFontSizeNormal */    
+    font-size: 11pt; /* PhoneFontSizeNormal */
 }
 
 h6
 {
-    font-size: 11pt; /* PhoneFontSizeSmall */    
+    font-size: 10pt; /* PhoneFontSizeSmall */
 }
 
 h4 > span
@@ -249,6 +249,17 @@ div.ui-slider-switch.ui-btn-down-a.ui-disabled{
 div.ui-slider-switch.ui-btn-down-a.div.ui-slider-switch-a.ui-disabled div.ui-slider-labelbg-a {
     background-color: black;
 }
+
+div.ui-slider a.ui-slider-handle.ui-btn-up-a .ui-btn-inner,
+div.ui-slider a.ui-slider-handle.ui-btn-hover-a .ui-btn-inner{
+	background-color: #373737;
+}
+
+div.ui-slider.ui-disabled a.ui-slider-handle.ui-btn-up-a .ui-btn-inner,
+div.ui-slider.ui-disabled a.ui-slider-handle.ui-btn-hover-a .ui-btn-inner{
+	background-color: #202020;
+}
+
 /*
 Collapsible
 */
@@ -439,6 +450,17 @@ div.ui-slider-switch.ui-btn-down-b.ui-disabled a.ui-slider-handle{
 
 div.ui-slider-switch.ui-btn-down-b.div.ui-slider-switch-a.ui-disabled div.ui-slider-labelbg-a {
     background-color: white;
+}
+
+
+div.ui-slider a.ui-slider-handle.ui-btn-up-b .ui-btn-inner,
+div.ui-slider a.ui-slider-handle.ui-btn-hover-b .ui-btn-inner{
+	background-color: #bfbfbf;
+}
+
+div.ui-slider.ui-disabled a.ui-slider-handle.ui-btn-up-b .ui-btn-inner,
+div.ui-slider.ui-disabled a.ui-slider-handle.ui-btn-hover-b .ui-btn-inner{
+	background-color: #f0f0f0;
 }
 
 /*
@@ -1384,7 +1406,7 @@ Loading screen
 
 .ui-header .ui-app-title{
     text-transform: uppercase;
-    font-size: 12pt;
+    font-size: 11pt;
     position: relative;
     top: 20pt;
 }
@@ -1864,10 +1886,18 @@ Dialog box
 	margin: 0px;
 	position: relative;
     border-radius: 0px;
-    color: white;
     border: none;
     box-shadow: none;
 }
+
+.ui-dialog .ui-bar-a,.ui-dialog .ui-body-a{
+	background-color: #202020;
+}
+
+.ui-dialog .ui-bar-b,.ui-dialog .ui-body-b{
+	background-color: #bfbfbf;
+}
+
 .ui-dialog .ui-header, 
 .ui-dialog .ui-footer  { 
 	padding: 0px;
@@ -1882,10 +1912,6 @@ Dialog box
     font-size: 12pt;
 }
 
-.ui-dialog .ui-header, .ui-dialog .ui-footer, .ui-dialog .ui-content{
-    background-color: #202020;
-}
-
 .ui-dialog .ui-header .ui-btn{
     display: none;
     visibility: collapse;
@@ -1896,12 +1922,22 @@ Dialog box
 }
 
 .ui-dialog .ui-header .ui-title{
-    font-size: 24pt;
+    font-size: 12pt;
+    font-family: Segoe WP, Segoe UI Light, Helvetica, san-serif;
     font-weight: bold;
-    margin: 30px 0px 5px 15px;
+    margin: 15px 0px 5px 15px;
     position: relative;
-    text-transform: none;
+    text-transform: uppercase;
 }
+
+.ui-dialog[data-url] .ui-header .ui-title{
+	font-size: 17pt;
+	font-weight: normal;
+	margin: 30px 0px 5px 15px;
+	position: relative;
+	text-transform: none;
+}
+
 
 /*
 Checkbox and radio button
@@ -2048,7 +2084,7 @@ Dropbox (custom selectmenu)
 .ui-selectmenu-list{
     width: 100%;
     margin: 0px !important;
-    background-color: #202020;
+    background-color: transparent;
 }
 
 .ui-selectmenu-list .ui-btn-text {
@@ -2181,7 +2217,7 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; } /* to avoid
 }
 
 .ui-listview .ui-btn-inner.ui-li{
-    font-size: 19pt !important;
+    font-size: 16pt !important;
     text-transform: none !important;
 }
 
@@ -2271,11 +2307,12 @@ input.ui-slider-input,
 	width: 50px; 
 	visibility: collapse; 
 }
+
 select.ui-slider-switch { display: none; }
 div.ui-slider { 
 	position: relative; 
-	display: inline-block; 
-	overflow: visible; 
+	display: inline-block;
+	overflow: hidden;
 	height: 8px; 
 	padding: 0; 
 	margin: 0px; 
@@ -2297,6 +2334,20 @@ div.ui-slider a.ui-slider-handle {
 	margin-top: 0px; 
 	margin-left: -4px;
 	border: 0px;
+}
+
+div.ui-slider a.ui-slider-handle .ui-btn-inner{
+	width: 3000px;
+	position: relative;
+	left: 8px;
+	height: 3px;
+	float: left;
+	opacity: 1;
+}
+
+div.ui-slider-switch a.ui-slider-handle .ui-btn-inner{
+	height: 0px;
+	width: 0px;
 }
 
 a.ui-slider-handle .ui-btn-inner { padding-left: 0; padding-right: 0; }
