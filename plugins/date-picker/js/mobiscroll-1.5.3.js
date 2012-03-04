@@ -467,9 +467,55 @@
         * Shows the scroller instance.
         */
         this.show = function () {
+
             if (s.disabled || visible) return false;
 
             s.beforeShow(elm, this);
+
+            if (navigator.plugins && navigator.plugins.dateTimePicker){
+
+                console.log('Run PhoneGap dateTimePicker plugin instead of html plugin version');
+
+                var me = this,
+                    initialDateTime = new Date();
+
+                var success = function (res) {
+                    console.log('selectDate success');
+                    me.setDate(res);
+                    me.setValue();
+                    me.hide();
+                };
+
+                var fail = function (e) {
+                    console.log("Error occurred or cancelled: " + e);
+
+                };
+
+                // To remove focus $(elm).blur();
+                $(elm).attr('disabled', 'disabled');
+                $(elm).removeAttr('disabled');
+
+
+
+                //event.srcElement && event.srcElement.hideFocus=true;
+
+
+                var dateTimePickerFunc = s.preset == 'date' ? navigator.plugins.dateTimePicker.selectDate :
+                    navigator.plugins.dateTimePicker.selectTime;
+
+                if ($(elm).val()) {
+                    // special hack to parse only time string
+                    initialDateTime =s.preset == 'date' ? new Date($(elm).val()) :
+                        new Date(new Date().toDateString() + " " + $(elm).val())
+                }
+
+                dateTimePickerFunc(success, fail, { value: initialDateTime});
+
+                return;
+            }
+
+	
+
             // Set global wheel element height
             h = s.height;
             m = Math.round(s.rows / 2);
@@ -650,7 +696,7 @@
         // Init show datewheel
         $(elm).addClass('scroller').unbind('focus.dw').bind('focus.dw', function (e) {
             if (s.showOnFocus)
-                that.show();
+		that.show();
         });
     }
 
