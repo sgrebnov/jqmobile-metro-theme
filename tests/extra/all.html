@@ -45,13 +45,13 @@
 		(head || document.body).appendChild(sc1);
 
         console.log("Linking phoneTheme plugin..");
-		
+
 		var sc4 = document.createElement("script");
 		sc4.src = "../../phonegap/phoneTheme.js";
 		(head || document.body).appendChild(sc4);
 
         console.log("Linking jqueryThemeSwitch..");
-		
+
 		var sc2 = document.createElement("script");
 		sc2.src = "../../phonegap/jquery.phonegap.metro.themeswitcher.js";
 		(head || document.body).appendChild(sc2);
@@ -61,6 +61,13 @@
 		var sc3 = document.createElement("script");
 		sc3.src = "../../phonegap/dateTimePicker.js";
 		(head || document.body).appendChild(sc3);
+
+        console.log("Linking backButtonHandler..");
+
+        var sc5 = document.createElement("script");
+        sc5.src = "../../phonegap/backButtonHandler.js";
+        (head || document.body).appendChild(sc5);
+
 	}
     </script>
 
@@ -130,12 +137,14 @@
 
         .ui-toggle-button-a .ui-icon-demo-set,
         .ui-toggle-button-b[checked='checked'] .ui-icon-demo-set{
-            background-image: url(Images/set.dark.png) ;
+            /*background-image: url(Images/set.dark.png) ;*/
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcFJREFUeNrsmYFtgzAQRQPKAIzgbkA28AiM0E7QjEAnSDYgG6QbwAZNJ2CE0AncO+ncnizbQsaqG+m+dAKMgXv4fD6Syhize2TVuweXAAiAAAiAAAiAAAiAACSoqqqggVqwHkzF+jnXpAnL6RQL3KsFu5tfDexcQ+cG3M/mR04AcsRVB6bAPlgbgnQ5AKrUDxo77OgcbBY4Xuj4DptmxS0OcM2NA6Ron2EeYZhg6FzI8TXOT9z5TdoSQrA9mrgwbEZnXtj2pvgc8DhmdaXQ4hO490DMtK9LAbQeiDEy2qER64tlIcowXIq99RONRsv6zx6AsSSAZo7MgbfN20+O8zP1TfKj3jD5FS1UPGQWth/KRl9s/wLZ6Ans/OdZKBLPigFeKTw69jy+oD0Xy0I0gb0ZKPKyOqfvz4pcKguFNHjyfBdJu22RUgIfbFdUDA2qQvl8eKetds5x3eAeh+TfaHMVcxjPZp1sRWpHQ/+LatSZnDHxdUJvfZF1pnoK4105zS9gb5EQxAp2KlrMuRBskTqy9sEZAZ3Tj83fA76vMqfOR4dfwT6pjJ5CAEl+yD80AiAAAiAAAiAAAiAAAlBM3wIMAG6WJmruRawzAAAAAElFTkSuQmCC);
         }
 
         .ui-toggle-button-b .ui-icon-demo-set,
         .ui-toggle-button-a[checked='checked'] .ui-icon-demo-set{
-            background-image: url(Images/set.light.png);
+            /*background-image: url(Images/set.light.png);*/
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAalJREFUeNrsmYGNgzAMABv0AzACv0F+A0ZghO8E7Qj8BPwGdIOOABv0fwJGgJ8gb0vm5UaBVo37aSVbshQIEF/i2I4wzrnNM0u2eXJRAAVQAAVQAAVQAAVQAGExxljQGrS4OwGW01IKYkFH/Cxpy/py6muxLTamJAAZ6jytQHElTuweglQS45nYAw25yQTfmeh6pNm+JG/wzlesB70IeCG6BPr8gQy/xvhewvjoPQCyD7gMV3SbztsX8/08+R4IGDbrEf3e28B1AGKgdpkKwAYguhtWrE4WhSjCcGMKNusNrYZlzw8BgC4lQMkMGRZmm99vPOMRaH/r+FlM+ARtaZPOMrH2UjT6Ye0DGPEK+vnvUWjFnwvmWkcCrNh7PKG9J4tCtIGDEWjlncp7NjojS5cNfzWQH+fJ+KWwa5OF0QXXcKxwawJ9Z/ngIYo59OcLWdkHG2OTmDTA6UoAnifK2HEzoQNMTlGHyxb0YyX6YQXbP8yBhmVexxMTuQtfgVLy/GGkf3DgcZKXynCNmXoH+k1ldC86nv6hUQAFUAAFUAAFUAAFUIBk8ivAAJTba5LGeGkDAAAAAElFTkSuQmCC);
         }
 
     </style>
