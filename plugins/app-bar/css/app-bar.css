@@ -34,7 +34,7 @@ Button panel
     width:30px;
     height: 30px;
     padding: 0px;
-    margin: 5px;
+    margin: 5px 15px;
     border: 2px solid;
     border-radius: 80px !important;
     background-color: transparent;
@@ -90,6 +90,9 @@ Buttons caption
     margin-top:-3px;
 }
 
+.ui-app-bar .ui-app-bar-titles span{
+	margin: 0px 10px;
+}
 .ui-app-bar .ui-app-bar-titles span {
     display:inline-block;
     width:48px;

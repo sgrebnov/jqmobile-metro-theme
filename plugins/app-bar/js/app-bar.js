@@ -11,7 +11,7 @@
                 $appBarBtns = $appBar.children( "a" ),
                 theme = $appBar.attr('data-theme')||$appBar.closest('[data-theme]').attr('data-theme')||'a';
 
-            $appBar.addClass( "ui-app-bar ui-app-bar-"+theme +" ui-body-"+theme);
+            $appBar.addClass( "ui-app-bar ui-app-bar-"+theme);
 
             $appBarBtns.buttonMarkup({
                 corners:	false,

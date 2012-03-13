@@ -114,6 +114,10 @@
 		    .removeClass('ui-btn-down-a ui-btn-down-b ui-btn-down-c ui-btn-down-d ui-btn-down-e')
 		    .addClass('ui-btn-down-' + theme);
 
+        $('.ui-app-bar')
+            .removeClass('ui-app-bar-a ui-app-bar-b')
+            .addClass('ui-app-bar-' + theme);
+
         //reset the header/footer widgets
         $('.ui-header, .ui-footer')
             .removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')

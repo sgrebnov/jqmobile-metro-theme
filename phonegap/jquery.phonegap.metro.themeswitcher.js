@@ -35,6 +35,10 @@ PhoneGap.addConstructor(function () {
                     .removeClass('ui-btn-down-a ui-btn-down-b ui-btn-down-c ui-btn-down-d ui-btn-down-e')
                     .addClass('ui-btn-down-' + themeSwatch);
 
+                $('.ui-app-bar')
+                    .removeClass('ui-app-bar-a ui-app-bar-b')
+                    .addClass('ui-app-bar-' + themeSwatch);
+
                 //reset the header/footer widgets
                 $('.ui-header, .ui-footer')
                     .removeClass('ui-bar-a ui-bar-b ui-bar-c ui-bar-d ui-bar-e')
