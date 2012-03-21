@@ -144,4 +144,26 @@ Menu
     text-decoration:none;
 }
 
+@media only screen and (orientation: landscape) and (min-device-width: 400px){
+    .ui-app-bar {
+        bottom: 0px;
+        right: 0px;
+        height: 100%;
+        width: 45px;
+    }
+
+    .ui-app-bar .ui-app-bar-btn-panel {
+
+        padding:20px 10px 0 0;
+        font-size:0;
+        width:45px;
+    }
+
+	.ui-app-bar .ui-app-bar-btn-panel .ui-btn {
+	
+	    margin: 15px 5px;
+	}
+
+}
+
 
