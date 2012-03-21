@@ -1932,6 +1932,8 @@ Dialog box
 
 .ui-dialog .ui-btn{
     background-color: transparent;
+    min-width: 127px;
+    margin-right: 17px;
 }
 
 .ui-dialog .ui-header .ui-title{
