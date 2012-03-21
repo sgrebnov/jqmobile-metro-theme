@@ -110,5 +110,7 @@ PhoneGap.addConstructor(function () {
         console.log("jqueryThemeSwitch: device ready, apply current theme");
         navigator.plugins.jqueryThemeSwitch.applyDeviceTheme();
 
+        window.themeId = "System";
+
     }, false);
 });

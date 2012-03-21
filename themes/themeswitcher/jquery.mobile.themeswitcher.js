@@ -8,7 +8,7 @@
     $.themeswitcher = function () {
         if ($('[data-' + $.mobile.ns + '-url=themeswitcher]').length) { return; }
 
-        getPhoneTheme();
+        $.getPhoneTheme();
 
         var currentPage = $.mobile.activePage,
 			menuPage = $('<div data-' + $.mobile.ns + 'url="themeswitcher" data-' + $.mobile.ns + 'role=\'dialog\' data-' + $.mobile.ns + 'theme=\'a\'>' +
@@ -39,31 +39,31 @@
 				.appendTo(menu);
         });
 
-        function getPhoneTheme() {
-
-            // some default values
-            window.isDark =  true;
-            window.accentColor = "#E51400";
-
-            var success = function (res) {
-               window.isDark =  res.isDark;
-               window.accentColor = res.accentColor;
-            };
-
-            var fail = function (e) {
-                alert("unable to get phone theme: " + e);
-
-            };
-
-            if(typeof navigator.plugins.phoneTheme !== "undefined") {
-
-                navigator.plugins.phoneTheme.get(success, fail, null);
-            }
-        };
-
         //create page, listview
         menuPage.page();
 
+    };
+
+    $.getPhoneTheme = function() {
+
+        // some default values
+        window.isDark =  true;
+        window.accentColor = "#E51400";
+
+        var success = function (res) {
+            window.isDark =  res.isDark;
+            window.accentColor = res.accentColor;
+        };
+
+        var fail = function (e) {
+            alert("unable to get phone theme: " + e);
+
+        };
+
+        if(typeof navigator.plugins.phoneTheme !== "undefined") {
+
+            navigator.plugins.phoneTheme.get(success, fail, null);
+        }
     };
 
     //remover, adder
@@ -173,6 +173,11 @@
     $(document).ready(function () {
 
         window.themeId = 'Dark'; // default theme
+
+        if(typeof navigator.plugins.phoneTheme !== "undefined") {
+            window.themeId = 'System';
+            $.getPhoneTheme();
+        }
 
 	    $.addTheme(window.themeId, false);
 

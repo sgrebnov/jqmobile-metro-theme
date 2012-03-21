@@ -37,6 +37,10 @@ if (typeof window.external.Notify !== "undefined") {
 	var sc2 = document.createElement("script");
 	sc2.src = "../../../../phonegap/phoneTheme.js";
 	(head || document.body).appendChild(sc2);
+
+	var sc3 = document.createElement("script");
+	sc3.src = "../../../../phonegap/jquery.phonegap.metro.themeswitcher.js";
+	(head || document.body).appendChild(sc3);
 }
 
 </script>
@@ -275,7 +279,7 @@ if (typeof window.external.Notify !== "undefined") {
 				<br/>
 				<br/>
 				<label for="link-wrong-page">Dialog box:</label>
-				<a id="link-wrong-page" name="link-wrong-page" href="dialog-box.html" data-rel="dialog">Open dialog</a>						
+				<a id="link-dialog" name="link-dialog" href="dialog-box.html" data-rel="dialog">Open dialog</a>
 			</div>
             <a data-role="button" href="../../../extra/all.html" data-ajax="false" >plugins</a>
         
