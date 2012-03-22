@@ -84,6 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CordovaSourceDictionary.xml" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="www\readme.txt" />
     <None Include="BuildManifestProcessor.js" />
     <Content Include="GapLib\WP7CordovaClassLib.dll" />

@@ -88,6 +88,10 @@ Cordova.addConstructor(function () {
             }
 
             navigator.plugins.phoneTheme.get(function (res) {
+        	
+            window.themeId = "System";
+            window.accentColor = res.accentColor;
+            window.isDark = res.isDark;
 
                 navigator.plugins.jqueryThemeSwitch.apply(successCallback, errorCallback, { dark: res.isDark, accentColor: res.accentColor });
             }, errorCallback, null);
@@ -109,8 +113,6 @@ Cordova.addConstructor(function () {
     document.addEventListener("deviceready", function () {
         console.log("jqueryThemeSwitch: device ready, apply current theme");
         navigator.plugins.jqueryThemeSwitch.applyDeviceTheme();
-
-        window.themeId = "System";
 
     }, false);
 });

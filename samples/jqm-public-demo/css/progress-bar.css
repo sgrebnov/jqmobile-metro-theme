@@ -28,7 +28,7 @@
 indeterminate state
 */
 .ui-progress-bar[indeterminate='true']{
-    background-image: url(../Images/wait-indicator.gif);
+    background-image: url(../images/wait-indicator.gif);
     height: 9px;
     margin: 0px;
     background-repeat: no-repeat;

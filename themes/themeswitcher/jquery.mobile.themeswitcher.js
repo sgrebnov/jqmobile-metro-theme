@@ -174,9 +174,9 @@
 
         window.themeId = 'Dark'; // default theme
 
-        if(typeof navigator.plugins.phoneTheme !== "undefined") {
+        if(navigator.plugins && typeof navigator.plugins.phoneTheme !== "undefined") {
             window.themeId = 'System';
-            $.getPhoneTheme();
+            //$.getPhoneTheme();
         }
 
 	    $.addTheme(window.themeId, false);
