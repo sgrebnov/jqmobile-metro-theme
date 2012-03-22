@@ -1,4 +1,4 @@
-﻿PhoneGap.addConstructor(function () {
+﻿Cordova.addConstructor(function () {
 
     navigator.plugins.phoneTheme =
     {
@@ -12,7 +12,7 @@
                 console.log("phoneTheme Error: errorCallback is not a function");
                 return;
             }
-            PhoneGap.exec(successCallback, errorCallback, "PhoneTheme", "get", options);
+            Cordova.exec(successCallback, errorCallback, "PhoneTheme", "get", options);
         }        
     }
 });

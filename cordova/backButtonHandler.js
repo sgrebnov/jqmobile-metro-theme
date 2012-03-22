@@ -1,4 +1,4 @@
-﻿PhoneGap.addConstructor(function () {
+﻿Cordova.addConstructor(function () {
 
     console.log("Installing back button handler");
 

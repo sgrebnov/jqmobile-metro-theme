@@ -33,39 +33,39 @@
 
         console.log("Installed console ! ");
 
-	// allows to use the page in NON phonegap environment
+	// allows to use the page in NON Cordova environment
 	if (typeof window.external.Notify !== "undefined") {
 
-        console.log("Linking PhoneGap..");
+        console.log("Linking Cordova..");
 	
-		var head = document.getElementsByTagName("head")[0];
+        var head = document.getElementsByTagName("head")[0];
 	
-		var sc1 = document.createElement("script");
-		sc1.src = "../../phonegap/phonegap-1.3.0.js";
-		(head || document.body).appendChild(sc1);
+        var sc1 = document.createElement("script");
+        sc1.src = "../../cordova/cordova-1.5.0.js";
+        (head || document.body).appendChild(sc1);
 
         console.log("Linking phoneTheme plugin..");
 
-		var sc4 = document.createElement("script");
-		sc4.src = "../../phonegap/phoneTheme.js";
-		(head || document.body).appendChild(sc4);
+        var sc4 = document.createElement("script");
+        sc4.src = "../../cordova/phoneTheme.js";
+        (head || document.body).appendChild(sc4);
 
         console.log("Linking jqueryThemeSwitch..");
 
-		var sc2 = document.createElement("script");
-		sc2.src = "../../phonegap/jquery.phonegap.metro.themeswitcher.js";
-		(head || document.body).appendChild(sc2);
+        var sc2 = document.createElement("script");
+        sc2.src = "../../cordova/jquery.cordova.metro.themeswitcher.js";
+        (head || document.body).appendChild(sc2);
 
         console.log("Linking dateTimePicker..");
 
-		var sc3 = document.createElement("script");
-		sc3.src = "../../phonegap/dateTimePicker.js";
-		(head || document.body).appendChild(sc3);
+	var sc3 = document.createElement("script");
+        sc3.src = "../../cordova/dateTimePicker.js";
+        (head || document.body).appendChild(sc3);
 
         console.log("Linking backButtonHandler..");
 
         var sc5 = document.createElement("script");
-        sc5.src = "../../phonegap/backButtonHandler.js";
+        sc5.src = "../../cordova/backButtonHandler.js";
         (head || document.body).appendChild(sc5);
 
 	}
