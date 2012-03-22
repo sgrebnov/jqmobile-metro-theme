@@ -7,6 +7,7 @@ Project aim is to build Metro UI HTML5-based theme on top of jQuery Mobile to mi
 ### Metro theme ##
 
 Metro theme is presented by jquery.mobile.metro.theme.css file and related images folder.
+
     /themes/metro/
 
 ### Additional plugins ###
@@ -34,8 +35,11 @@ The theme provides additional level of functionality when viewing on the phone u
 by the following cordova plugins.
 
 backButtonHandler.js - hardware back button handling functionality
+
 dateTimePicker.js - js bridge for Cordova native DateTimePicker
+
 jquery.cordova.metro.themeswitcher.js - provides functionality to apply system colors (uses phoneTheme.js below)
+
 phoneTheme.js - js bridge for Cordova system colors detection plugin
 
 ### Samples ###
@@ -94,12 +98,15 @@ http://silverlight.codeplex.com/releases/view/71550#DownloadId=270984
 ## Links ##
 
 Theme whe web version (doesn’t fully reflect the device experience)
+
 http://mshare.akvelon.net:8184/metro/tests/basic/gallery/html/forms-all.html
 
 Web demo for the jquerymobile.com site reference
+
 http://mshare.akvelon.net:8184/metro/samples/jqm-public-demo/index.html
 
 Windows Phone demo app (restricted access)
+
 http://windowsphone.com/s?appid=f62a1b8b-b4db-4066-b825-1139e5b9f57a
 
 
