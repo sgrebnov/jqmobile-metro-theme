@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- This file is auto-generated, do not edit! -jm -->
 <GapSourceDictionary>
+    <FilePath Value="www\cordova-1.5.0.js"/>
     <FilePath Value="www\index.html"/>
+    <FilePath Value="www\jquery.cordova.metro.themeswitcher.js"/>
     <FilePath Value="www\jquery.globalstylesheet.js"/>
     <FilePath Value="www\jquery.js"/>
     <FilePath Value="www\jquery.mobile-1.0.js"/>
-    <FilePath Value="www\jquery.phonegap.metro.themeswitcher.js"/>
     <FilePath Value="www\master.css"/>
-    <FilePath Value="www\phonegap-1.4.1.js"/>
     <FilePath Value="www\phoneTheme.js"/>
     <FilePath Value="www\themes\metro\jquery.mobile.metro.theme.css"/>
     <FilePath Value="www\themes\metro\images\ajax-loader.png"/>

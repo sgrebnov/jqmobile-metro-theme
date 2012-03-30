@@ -1,16 +1,25 @@
-﻿using System.Runtime.Serialization;
-using WP7GapClassLib.PhoneGap;
-using WP7GapClassLib.PhoneGap.Commands;
-using WP7GapClassLib.PhoneGap.JSON;
+﻿/*
+ * This plugin is available under *either* the terms of the modified BSD license *or* the
+ * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
+ *
+ * Copyright (c) 2011-2012, Sergey Grebnov
+ * Copyright (c) 2011-2012, Microsoft Corporation
+ */
+
+using System.Runtime.Serialization;
+using WP7CordovaClassLib.Cordova;
+using WP7CordovaClassLib.Cordova.Commands;
+using WP7CordovaClassLib.Cordova.JSON;
 using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Phone.Controls;
 using System.Windows;
+using Microsoft.Phone.Tasks;
 using System.Windows.Media;
 
-namespace PhoneGap.Extension.Commands
+namespace Cordova.Extension.Commands
 {
 
     public class PhoneTheme : BaseCommand
