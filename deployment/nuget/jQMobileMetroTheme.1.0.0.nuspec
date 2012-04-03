@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>Sergey Grebnov</authors>
+    <owners />
+    <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+    <projectUrl>https://github.com/sgrebnov/jqmobile-metro-theme</projectUrl>
+    <id>jQMobileMetroTheme</id>
+    <title />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides Metro UI HTML5-based theme on top of jQuery Mobile to mimic Windows Phone 7 native look and feel.</description>
+  </metadata>
+  <files />
+</package>
