@@ -163,7 +163,7 @@ textarea.ui-input-text.ui-body-a[disabled="disabled"]{
 .ui-btn-hover-a a.ui-link-inherit {
 	color: white /*{a-bhover-color}*/;
 }
-.ui-btn-down-a {
+.ui-btn-down-a[data-role="button"] {
 	border-color: white /*{a-bdown-border}*/;
 	background: white /*{a-bdown-background-color}*/;
 	color: black /*{a-bdown-color}*/;
@@ -356,7 +356,7 @@ textarea.ui-input-text.ui-body-b[disabled="disabled"]{
 .ui-btn-hover-b a.ui-link-inherit {
 	color: white /*{b-bhover-color}*/;
 }
-.ui-btn-down-b {
+.ui-btn-down-b[data-role="button"] {
 	border-color: black /*{b-bdown-border}*/;
 	background: black /*{b-bdown-background-color}*/;
 	color: white /*{b-bdown-color}*/;
@@ -799,7 +799,7 @@ input, select, textarea, button {
 
 .ui-link{
     font-weight: normal;
-    font-size: 12pt;
+    //font-size: 12pt;
 }
 
 .ui-btn{
@@ -1263,7 +1263,7 @@ a.ui-link-inherit {
 -----------------------------------------------------------------------------------------------------------*/
 
 .ui-focus{
-	background-color: white !important;
+	/*background-color: white !important;*/
 }
 
 /* unset box shadow in browsers that don't do it right
@@ -2051,7 +2051,7 @@ Dropbox
     border: 2px solid #808080;
 }
 
-/* Fixes #2588 — When Windows Phone 7.5 (Mango) tries to calculate a numeric opacity for a select—including “inherit”—without explicitly specifying an opacity on the parent to give it context, a bug appears where clicking elsewhere on the page after opening the select will open the select again. */
+/* Fixes #2588 — When Windows Phone 7.5 (Mango) tries to calculate a numeric opacity for a select—including “inherit�?—without explicitly specifying an opacity on the parent to give it context, a bug appears where clicking elsewhere on the page after opening the select will open the select again. */
 .ui-select .ui-btn select { cursor: pointer; left: 0; top:0; width: 100%;  min-height: 1.5em; min-height: 100%; height: 3em; max-height: 100%; opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); z-index: 2; }
 
 .ui-select .ui-disabled { opacity: 1; }
@@ -2243,6 +2243,10 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; } /* to avoid
 
 .ui-listview.ui-disabled {
     color: #808080 !important;
+}
+
+.ui-listview .ui-li-divider {
+    border-radius: 0px;
 }
 
 .ui-li:last-child, .ui-li.ui-field-contain:last-child { border-bottom-width: 1px; }

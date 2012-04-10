@@ -46,13 +46,14 @@ if (typeof window.external.Notify !== "undefined") {
 </script>
 
 </head>
-<body onload="$.mobile.fixedToolbars.setTouchToggleEnabled(false);">
+<!--<body onload="$.mobile.fixedToolbars.setTouchToggleEnabled(false);">-->
+<body>
 
 	<div data-role="page" class="type-interior" data-theme="a">
-		<div data-role="header" data-theme="a" data-position="fixed">
-        <span class="ui-app-title">App title</span>
-		<h1>Forms</h1>		
-	</div><!-- /header -->
+		<div data-role="header" data-theme="a" data-position="static">
+			<span class="ui-app-title">App title</span>
+			<h1>Forms</h1>		
+		</div><!-- /header -->
 
 	<div data-role="content" data-theme="a">
 		<div class="content-primary">
@@ -278,8 +279,8 @@ if (typeof window.external.Notify !== "undefined") {
 				<a id="link-wrong-page" name="link-wrong-page" href="wrong path">Sample Error Message</a>
 				<br/>
 				<br/>
-				<label for="link-wrong-page">Dialog box:</label>
-				<a id="link-dialog" name="link-dialog" href="dialog-box.html" data-rel="dialog">Open dialog</a>
+				<label for="link-dialog">Dialog box:</label>
+				<a id="link-dialog" href="dialog-box.html" data-rel="dialog">Open dialog</a>
 			</div>
             <a data-role="button" href="../../../extra/all.html" data-ajax="false" >plugins</a>
         
@@ -288,7 +289,7 @@ if (typeof window.external.Notify !== "undefined") {
 
 </div><!-- /content -->
 
-<div data-role="footer" data-position="fixed">
+<div data-role="footer" data-position="static">
 	<div data-role="navbar" data-iconpos="top">
 		<ul>
 			<li><a href="#" data-icon="plus">Add</a></li>
