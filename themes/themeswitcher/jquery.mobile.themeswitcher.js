@@ -73,7 +73,7 @@
         if(updateCssLink)
             $('head').children('link').remove();
 
-        var csspath = 'default/jquery.mobile-1.0.css'; // original theme by default
+        var csspath = 'default/jquery.mobile.css'; // original theme by default
         var theme = 'a';
 
         if (themeId !== 'Original') {
