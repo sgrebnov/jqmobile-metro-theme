@@ -140,7 +140,7 @@ textarea.ui-input-text.ui-body-a[disabled="disabled"]{
 }
 
 .ui-body-a .ui-link:active {
-	color: white  /*{a-body-link-active}*/;
+	color: #bfbfbf  /*{a-body-link-active}*/;
 }
 
 .ui-body-a .ui-link:visited {
@@ -231,22 +231,15 @@ div.ui-slider-switch.ui-btn-down-a div.ui-slider-inneroffset {
     background-color: transparent;
 }
 
-div.ui-slider-switch.ui-btn-down-a div.ui-slider-labelbg {
+div.ui-slider-switch.ui-btn-down-a span.ui-slider-label-a {
     border-color: black;
 }
-div.ui-slider-switch.ui-btn-down-a div.ui-slider-labelbg-b {
-    background-color: black;
-}
 
-div.ui-slider-switch.ui-btn-down-a.ui-slider-switch-b a.ui-slider-handle{
+div.ui-slider-switch.ui-slider.ui-btn-down-a a.ui-slider-handle[aria-valuenow="on"] {
     margin-left: -47% !important;
 }
 
-div.ui-slider-switch.ui-btn-down-a.ui-disabled{
-    background-color: black;
-}
-
-div.ui-slider-switch.ui-btn-down-a.div.ui-slider-switch-a.ui-disabled div.ui-slider-labelbg-a {
+div.ui-slider-switch.ui-btn-down-a.div.ui-slider-switch-a.ui-disabled span.ui-slider-label-a {
     background-color: black;
 }
 
@@ -424,24 +417,16 @@ div.ui-slider-switch.ui-btn-down-b div.ui-slider-inneroffset {
     background-color: transparent;
 }
 
-div.ui-slider-switch.ui-btn-down-b div.ui-slider-labelbg {
+div.ui-slider-switch.ui-btn-down-b span.ui-slider-label-a {
     border-color: white;
 }
 
-div.ui-slider-switch.ui-btn-down-b div.ui-slider-labelbg-b {
-    background-color: white;
-}
-
-div.ui-slider-switch.ui-btn-down-b.ui-slider-switch-b a.ui-slider-handle{
-    margin-left: -43% !important;
+div.ui-slider-switch.ui-slider.ui-btn-down-b a.ui-slider-handle[aria-valuenow="on"] {
+    margin-left: -47% !important;
 }
 
 div.ui-slider-switch.ui-btn-down-b.ui-slider-switch-a a.ui-slider-handle{
     margin-left: -105% !important;
-}
-
-div.ui-slider-switch.ui-btn-down-b.ui-disabled{
-    background-color: white;
 }
 
 div.ui-slider-switch.ui-btn-down-b.ui-disabled a.ui-slider-handle{
@@ -2051,7 +2036,7 @@ Dropbox
     border: 2px solid #808080;
 }
 
-/* Fixes #2588 — When Windows Phone 7.5 (Mango) tries to calculate a numeric opacity for a select—including “inherit�?—without explicitly specifying an opacity on the parent to give it context, a bug appears where clicking elsewhere on the page after opening the select will open the select again. */
+/* Fixes #2588 — When Windows Phone 7.5 (Mango) tries to calculate a numeric opacity for a select—including “inherit�?—without explicitly specifying an opacity on the parent to give it context, a bug appears where clicking elsewhere on the page after opening the select will open the select again. */
 .ui-select .ui-btn select { cursor: pointer; left: 0; top:0; width: 100%;  min-height: 1.5em; min-height: 100%; height: 3em; max-height: 100%; opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); z-index: 2; }
 
 .ui-select .ui-disabled { opacity: 1; }
@@ -2378,7 +2363,7 @@ a.ui-slider-handle .ui-btn-inner { padding-left: 0; padding-right: 0; }
 
 div.ui-slider-switch {
     height: 22px;
-    overflow: hidden;
+    overflow: visible;
     margin-left: 0;
     width: 60px;
     max-width: 60px;
@@ -2394,27 +2379,21 @@ div.ui-slider-inneroffset {
 
 a.ui-slider-handle-snapping { }
 
-div.ui-slider-labelbg {
-    position: absolute;
-    top:0px;
+div.ui-slider-switch span.ui-slider-label-a {
+    background-color: #1BA1E2;
+    color: transparent;
+    display: inline;
+    left: 0;
+    top: 0;
     margin: 0px;
     border-radius: 0px;
-    height: 82%;
     vertical-align: middle;
     border: 2px solid;
-    width: 60%;
 }
 
-div.ui-slider-switch div.ui-slider-labelbg-a {
-    left: 0;
-    background-color: #1BA1E2;
+div.ui-slider-switch.ui-disabled span.ui-slider-label-a {
+    background-color: transparent;
 }
-div.ui-slider-switch div.ui-slider-labelbg-b {
-    right: 0;
-}
-
-.ui-slider-switch-a div.ui-slider-labelbg-a, .ui-slider-switch-b div.ui-slider-labelbg-b { z-index: -1; }
-.ui-slider-switch-a div.ui-slider-labelbg-b, .ui-slider-switch-b div.ui-slider-labelbg-a { z-index: 0; }
 
 .ui-slider-switch-b div.ui-slider-labelbg-a{
     width: 100% !important;
@@ -2422,10 +2401,10 @@ div.ui-slider-switch div.ui-slider-labelbg-b {
 
 div.ui-slider-switch a.ui-slider-handle {
     z-index: 20;
-    width: 35%;
-    height: 80%;
-    margin-top: 0px;
-    margin-left: -101%;
+    width: 15px;
+    height: 30px;
+    margin-top: -6px;
+    margin-left: -120%;
     background-color: white;
     border: 2px solid black;
 }
