@@ -129,6 +129,9 @@
             .addClass('ui-body-' + theme)
             .attr('data-theme', theme);
 
+        // toggle button fix
+        $('.ui-toggle-button').removeClass('ui-toggle-button-a ui-toggle-button-b').addClass('ui-toggle-button-' + theme);
+
 
         if (isSystem)
         {
@@ -139,9 +142,8 @@
             $(".ui-btn-active a.ui-link-inherit").globalcss('color', accentColor + ' !important');
             $(".ui-selectmenu-list li[aria-selected='true'] .ui-btn-text a").globalcss('color', accentColor+ ' !important');
             $(".ui-li-divider").globalcss('background-color', accentColor+ ' !important');
-            $("div.ui-slider-switch").globalcss('background-color', 'transparent !important');
-            $("div.ui-slider:not(.ui-disabled)").globalcss('background-color', accentColor + ' !important');
-            $("div.ui-slider-switch span.ui-slider-label").globalcss('background-color', accentColor+ ' !important');
+            $("div.ui-slider:not(.ui-disabled):not(.ui-slider-switch").globalcss('background-color', accentColor + ' !important');
+            $("div.ui-slider-switch span.ui-slider-label-a").globalcss('background-color', accentColor+ ' !important');
             $(".ui-progress-bg").globalcss('background-color', accentColor + ' !important');
             $(".ui-progress-value").globalcss('background-color', accentColor + ' !important');
 

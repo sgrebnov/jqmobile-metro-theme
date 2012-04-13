@@ -59,9 +59,8 @@ Cordova.addConstructor(function () {
                 $(".ui-btn-active a.ui-link-inherit").globalcss('color', theme.accentColor + ' !important');
                 $(".ui-selectmenu-list li[aria-selected='true'] .ui-btn-text a").globalcss('color', theme.accentColor + ' !important');
                 $(".ui-li-divider").globalcss('background-color', theme.accentColor + ' !important');
-                $("div.ui-slider-switch").globalcss('background-color', 'transparent !important');
-                $("div.ui-slider:not(.ui-disabled)").globalcss('background-color', theme.accentColor + ' !important');
-                $("div.ui-slider-switch span.ui-slider-label").globalcss('background-color', theme.accentColor + ' !important');
+                $("div.ui-slider:not(.ui-disabled):not(.ui-slider-switch)").globalcss('background-color', theme.accentColor + ' !important');
+                $("div.ui-slider-switch span.ui-slider-label-a").globalcss('background-color', theme.accentColor + ' !important');
                 $(".ui-progress-bg").globalcss('background-color', theme.accentColor + ' !important');
                 $(".ui-progress-value").globalcss('background-color', theme.accentColor + ' !important');
             }
