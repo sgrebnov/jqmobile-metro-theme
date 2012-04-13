@@ -1244,15 +1244,14 @@ a.ui-link-inherit {
 
 }
 
-/* Focus state - set here for specificity
------------------------------------------------------------------------------------------------------------*/
-
 .ui-focus{
 	/*background-color: white !important;*/
 }
 
-/* unset box shadow in browsers that don't do it right
------------------------------------------------------------------------------------------------------------*/
+.ui-input-text.ui-focus,
+.ui-input-search.ui-focus {
+    background-color: white !important;
+}
 
 .ui-mobile-nosupport-boxshadow * {
 	box-shadow: none !important;
@@ -1327,17 +1326,38 @@ Loading screen
     vertical-align: middle;
 }
 
+@media screen and (device-height: 800px) and (orientation: portrait){
+    .ui-loader.ui-loader-verbose {
+        margin: -240px 0px 0px 0px;
+        padding: 0px 0px 0px 15px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: #202020;
+        z-index: 1200;
+    }
 
-.ui-loader.ui-overlay-shadow {
-    margin: -100px 0px 0px 0px;
-    padding: 0px 0px 0px 15px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    background-color: #202020;
-    z-index: 1200;
+    .ui-loader.ui-loader-verbose h1 {
+        text-align: left !important;
+    }
 }
 
+@media screen and (device-width: 480px) and (orientation: landscape){
+
+    .ui-loader.ui-loader-verbose {
+        margin: -160px 0px 0px 0px;
+        padding: 0px 0px 0px 15px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: #202020;
+        z-index: 1200;
+    }
+
+    .ui-loader.ui-loader-verbose h1 {
+        text-align: left !important;
+    }
+}
 
 .ui-loader h1 {
     font-size: 15px;
@@ -1346,11 +1366,11 @@ Loading screen
     text-align: center;
 }
 
-.ui-loader.ui-overlay-shadow h1 {
+.ui-loader.ui-loader-verbose h1 {
     top: 45%;
     left: 0;
     position: relative;
-    text-align: left;
+    text-align: center;
 }
 
 .ui-loader .ui-icon {
