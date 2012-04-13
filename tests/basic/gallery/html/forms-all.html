@@ -9,9 +9,11 @@
 	-->
 
 	<link rel="stylesheet"  href="../../../../themes/metro/jquery.mobile.metro.theme.css" />
+    <link rel="stylesheet"  href="../../../../jqmobile-core/jquery.mobile.fixedToolbar.polyfill.css" />
 
 	<script src="../../../../jqmobile-core/jquery.js"></script>
 	<script src="../../../../jqmobile-core/jquery.mobile.js"></script>
+    <script src="../../../../jqmobile-core/jquery.mobile.fixedToolbar.polyfill.js"></script>
 	<script src="../../../../themes/themeswitcher/jquery.globalstylesheet.js"></script>
 	<script src="../../../../themes/themeswitcher/jquery.mobile.themeswitcher.js"></script>
 
@@ -46,11 +48,9 @@ if (typeof window.external.Notify !== "undefined") {
 </script>
 
 </head>
-<!--<body onload="$.mobile.fixedToolbars.setTouchToggleEnabled(false);">-->
-<body>
-
+<body onload="$.mobile.touchToggleEnabled = false;">
 	<div data-role="page" class="type-interior" data-theme="a">
-		<div data-role="header" data-theme="a" data-position="static">
+		<div data-role="header" data-theme="a" data-position="fixed">
 			<span class="ui-app-title">App title</span>
 			<h1>Forms</h1>		
 		</div><!-- /header -->
@@ -289,7 +289,7 @@ if (typeof window.external.Notify !== "undefined") {
 
 </div><!-- /content -->
 
-<div data-role="footer" data-position="static">
+<div data-role="footer" data-position="fixed">
 	<div data-role="navbar" data-iconpos="top">
 		<ul>
 			<li><a href="#" data-icon="plus">Add</a></li>
