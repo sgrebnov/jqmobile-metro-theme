@@ -2409,6 +2409,7 @@ div.ui-slider-switch span.ui-slider-label-a {
     border-radius: 0px;
     vertical-align: middle;
     border: 2px solid;
+    font-size: 0px;
 }
 
 div.ui-slider-switch.ui-disabled span.ui-slider-label-a {

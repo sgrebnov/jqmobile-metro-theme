@@ -50,7 +50,7 @@ Cordova.addConstructor(function () {
                     .addClass('ui-body-' + themeSwatch)
                     .attr('data-theme', themeSwatch);
 
-		// toggle button fix
+                // toggle button fix
                 $('.ui-toggle-button').removeClass('ui-toggle-button-a ui-toggle-button-b').addClass('ui-toggle-button-' + themeSwatch);
 
 
@@ -60,8 +60,8 @@ Cordova.addConstructor(function () {
                 $(".ui-selectmenu-list li[aria-selected='true'] .ui-btn-text a").globalcss('color', theme.accentColor + ' !important');
                 $(".ui-li-divider").globalcss('background-color', theme.accentColor + ' !important');
                 $("div.ui-slider-switch").globalcss('background-color', 'transparent !important');
-                $("div.ui-slider").globalcss('background-color', theme.accentColor + ' !important');
-                $("div.ui-slider-switch div.ui-slider-labelbg-a").globalcss('background-color', theme.accentColor + ' !important');
+                $("div.ui-slider:not(.ui-disabled)").globalcss('background-color', theme.accentColor + ' !important');
+                $("div.ui-slider-switch span.ui-slider-label").globalcss('background-color', theme.accentColor + ' !important');
                 $(".ui-progress-bg").globalcss('background-color', theme.accentColor + ' !important');
                 $(".ui-progress-value").globalcss('background-color', theme.accentColor + ' !important');
             }
