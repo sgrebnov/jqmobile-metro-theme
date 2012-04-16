@@ -1,30 +1,24 @@
-/*
-* jQuery Mobile Framework 1.0
-* http://jquerymobile.com
-*
-* Copyright 2011 (c) jQuery Project
-* Dual licensed under the MIT or GPL Version 2 licenses.
-* http://jquery.org/license
-*
-*/
-
 
 /* Headers */
-/**
-PhoneFontSizeSmall=11pt
-PhoneFontSizeNormal = 15pt
-PhoneFontSizeMedium=17pt
-PhoneFontSizeMediumLarge=19pt
-PhoneFontSizeLarge=24pt
-PhoneFontSizeExtraLarge=32pt
-PhoneFontSizeExtraExtraLarge=54pt
-PhoneFontSizeHuge=140pt
-*/
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    font-size: 11pt;
+    font-family: "Segoe WP, Segoe UI Light, Helvetica, san-serif";
+    letter-spacing: 0.02em;
+}
 
 h1, h2, h3, h4, h5, h6
 {
     display: block;
-    font-family: Segoe WP, Segoe UI Light, Helvetica, san-serif;
     font-weight: normal;
     margin: 0px;
     min-height: 1.1em;
@@ -42,29 +36,29 @@ h1
 
 h2
 {
-    font-size: 19pt; /* PhoneFontSizeLarge */
+    font-size: 19pt;  /* PhoneFontSizeLarge */
     font-weight: normal;
 }
 
 h3
 {
-    font-size: 17pt; /* PhoneFontSizeMediumLarge */
+    font-size: 17pt;  /* PhoneFontSizeMediumLarge */
 }
 
 h4
 {
-    font-size: 15pt; /* PhoneFontSizeMedium */
+    font-size: 15pt;  /* PhoneFontSizeMedium */
     font-weight: normal;
 }
 
 h5
 {
-    font-size: 11pt; /* PhoneFontSizeNormal */
+    font-size: 11pt;  /* PhoneFontSizeNormal */
 }
 
 h6
 {
-    font-size: 10pt; /* PhoneFontSizeSmall */
+    font-size: 10pt;  /* PhoneFontSizeSmall */
 }
 
 h4 > span
@@ -782,12 +776,12 @@ Collapsible
 .ui-body-a, .ui-body-b,
 input, select, textarea, button {
     font-family: Segoe WP, Segoe UI, Helvetica, san-serif /*{global-font-family}*/;
-    font-size: 15pt; /* PhoneFontSizeNormal */
+    font-size: 11pt; /* PhoneFontSizeNormal */
 }
 
 .ui-link{
     font-weight: normal;
-    //font-size: 12pt;
+    /* font-size: 12pt; */
 }
 
 .ui-btn{
@@ -1406,7 +1400,7 @@ Loading screen
 .ui-page .ui-header, .ui-page .ui-footer { position: relative; }
 .ui-header .ui-btn-left { position: absolute; left: 10px; top: .4em;  }
 .ui-header .ui-btn-right { position: absolute; right: 10px; top: .4em; }
-.ui-header .ui-title, .ui-footer .ui-title { min-height: 1.1em; text-align: left; font-size: 32pt; display: block; margin: 15pt 0 0 0pt;  padding: 0;  text-overflow: ellipsis; overflow: hidden; white-space: nowrap; outline: 0 !important; text-transform: lowercase;}
+.ui-header .ui-title, .ui-footer .ui-title { min-height: 1.1em; text-align: left; font-size: 32pt; display: block; margin: 17pt 0 0 0pt;  padding: 0;  text-overflow: ellipsis; overflow: hidden; white-space: nowrap; outline: 0 !important; text-transform: lowercase;}
 
 .ui-header .ui-app-title{
     text-transform: uppercase;
@@ -1419,6 +1413,11 @@ Loading screen
 .ui-header .ui-title{
     margin-left: 15px;
 }
+
+h1.ui-title {
+    /*font-weight: bold;*/
+}
+
 /* Fix for polyfill */
 @media screen and (device-height: 800px) and (orientation: portrait){
     .ui-footer-fixed {
@@ -2244,6 +2243,15 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; } /* to avoid
     text-transform: none !important;
     font-size: 19pt !important;
     font-weight: normal !important;
+
+}
+
+.ui-listview li.ui-li-divider {
+    padding-left: 4px;
+}
+
+.ui-listview li.ui-li-divider.ui-index {
+    width: 28px;
 }
 
 .ui-listview .ui-btn-inner.ui-li{
@@ -2272,14 +2280,14 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; } /* to avoid
 }
 
 .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
-    padding: .3em 0px;
+    margin: .3em 0px;
     display: block;
 }
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb  { min-height: 60px; padding-left: 100px; }
 
 .ui-li-has-icon .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-icon {
     min-height: 20px;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
 }
 
 .ui-li-has-count .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-count { padding-right: 45px; }
@@ -2294,7 +2302,7 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; } /* to avoid
     max-height: 40px;
     max-width: 40px;
     left: 0px;
-    top: .7em;
+    position: relative;
 }
 
 .ui-li-thumb, .ui-listview .ui-li-icon, .ui-li-content { float: left; margin-right: 10px; }
