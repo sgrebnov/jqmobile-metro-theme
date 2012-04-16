@@ -33,8 +33,8 @@
             </Grid.RowDefinitions>                        
             <ScrollViewer Height="600">
                 <StackPanel>
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Name="formCaption" Text="Form elements" VerticalAlignment="Stretch" FontSize="{StaticResource PhoneFontSizeLarge}" Width="Auto" FontStretch="Normal" Margin="12,0,0,0" />                                                                                            
-                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="dummyParagraph" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." VerticalAlignment="Top" TextWrapping="Wrap" Width="Auto" />
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Name="formCaption" Text="Form elements" VerticalAlignment="Stretch" FontSize="{StaticResource PhoneFontSizeLarge}" Width="Auto" FontStretch="Normal" Margin="12,0,0,0" />
+                    <TextBlock Height="Auto" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="dummyParagraph" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." VerticalAlignment="Top" TextWrapping="Wrap" Width="Auto" />
                     
                     <TextBlock Margin="12,20,0,0" Text="h6/Small" FontSize="{StaticResource PhoneFontSizeSmall}"/>
                     <TextBlock Margin="12,0,0,0" Text="h5/Normal" FontSize="{StaticResource PhoneFontSizeNormal}"/>
