@@ -19,7 +19,7 @@
         <my:CordovaView HorizontalAlignment="Stretch" 
                    Margin="0,0,0,0"  
                    Name="PGView" 
-                   VerticalAlignment="Stretch" StartPageUri="http://mshare.akvelon.net:8184/metro/v2/tests/basic/gallery/html/forms-all.html" />
+                   VerticalAlignment="Stretch" StartPageUri="http://t400.rp.ru/mtest2/tests/basic/gallery/html/forms-all.html" />
     </Grid>
 
 </phone:PhoneApplicationPage>

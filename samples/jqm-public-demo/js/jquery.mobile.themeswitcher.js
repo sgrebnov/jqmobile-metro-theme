@@ -8,7 +8,7 @@
     $.themeswitcher = function () {
         if ($('[data-' + $.mobile.ns + '-url=themeswitcher]').length) { return; }
 
-        getPhoneTheme();
+        $.getPhoneTheme();
 
         var currentPage = $.mobile.activePage,
 			menuPage = $('<div data-' + $.mobile.ns + 'url="themeswitcher" data-' + $.mobile.ns + 'role=\'dialog\' data-' + $.mobile.ns + 'theme=\'a\'>' +
@@ -39,31 +39,31 @@
 				.appendTo(menu);
         });
 
-        function getPhoneTheme() {
-
-            // some default values
-            window.isDark =  true;
-            window.accentColor = "#E51400";
-
-            var success = function (res) {
-               window.isDark =  res.isDark;
-               window.accentColor = res.accentColor;
-            };
-
-            var fail = function (e) {
-                alert("unable to get phone theme: " + e);
-
-            };
-
-            if(typeof navigator.plugins.phoneTheme !== "undefined") {
-
-                navigator.plugins.phoneTheme.get(success, fail, null);
-            }
-        };
-
         //create page, listview
         menuPage.page();
 
+    };
+
+    $.getPhoneTheme = function() {
+
+        // some default values
+        window.isDark =  true;
+        window.accentColor = "#E51400";
+
+        var success = function (res) {
+            window.isDark =  res.isDark;
+            window.accentColor = res.accentColor;
+        };
+
+        var fail = function (e) {
+            alert("unable to get phone theme: " + e);
+
+        };
+
+        if(typeof navigator.plugins.phoneTheme !== "undefined") {
+
+            navigator.plugins.phoneTheme.get(success, fail, null);
+        }
     };
 
     //remover, adder
@@ -129,6 +129,9 @@
             .addClass('ui-body-' + theme)
             .attr('data-theme', theme);
 
+        // toggle button fix
+        $('.ui-toggle-button').removeClass('ui-toggle-button-a ui-toggle-button-b').addClass('ui-toggle-button-' + theme);
+
 
         if (isSystem)
         {
@@ -139,9 +142,8 @@
             $(".ui-btn-active a.ui-link-inherit").globalcss('color', accentColor + ' !important');
             $(".ui-selectmenu-list li[aria-selected='true'] .ui-btn-text a").globalcss('color', accentColor+ ' !important');
             $(".ui-li-divider").globalcss('background-color', accentColor+ ' !important');
-            $("div.ui-slider-switch").globalcss('background-color', 'transparent !important');
-            $("div.ui-slider").globalcss('background-color', accentColor + ' !important');
-            $("div.ui-slider-switch div.ui-slider-labelbg-a").globalcss('background-color', accentColor+ ' !important');
+            $("div.ui-slider:not(.ui-disabled):not(.ui-slider-switch").globalcss('background-color', accentColor + ' !important');
+            $("div.ui-slider-switch span.ui-slider-label-a").globalcss('background-color', accentColor+ ' !important');
             $(".ui-progress-bg").globalcss('background-color', accentColor + ' !important');
             $(".ui-progress-value").globalcss('background-color', accentColor + ' !important');
 
@@ -173,6 +175,11 @@
     $(document).ready(function () {
 
         window.themeId = 'Dark'; // default theme
+
+        if(navigator.plugins && typeof navigator.plugins.phoneTheme !== "undefined") {
+            window.themeId = 'System';
+            //$.getPhoneTheme();
+        }
 
 	    $.addTheme(window.themeId, false);
 
