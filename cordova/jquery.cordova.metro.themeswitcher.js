@@ -17,6 +17,10 @@ Cordova.addConstructor(function () {
 
                 // based on http://stackoverflow.com/questions/8656801/how-to-change-theme-dynamically-in-jquery-mobile
 
+                $('body')
+                    .removeClass('ui-overlay-a ui-overlay-b ui-overlay-c ui-overlay-d ui-overlay-e')
+                    .addClass('ui-overlay-' + theme);
+
                 $('.ui-btn').not('.ui-li-divider')
                     .removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
                     .addClass('ui-btn-up-' + themeSwatch)
