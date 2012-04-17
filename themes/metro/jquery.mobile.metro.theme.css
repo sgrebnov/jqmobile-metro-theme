@@ -1345,6 +1345,10 @@ Loading screen
     .ui-loader.ui-loader-verbose h1 {
         text-align: left !important;
     }
+
+    .ui-loader.ui-loader-verbose span.ui-icon-loading {
+        visibility: hidden;
+    }
 }
 
 @media screen and (device-width: 480px) and (orientation: landscape){
@@ -1361,6 +1365,10 @@ Loading screen
 
     .ui-loader.ui-loader-verbose h1 {
         text-align: left !important;
+    }
+
+    .ui-loader.ui-loader-verbose span.ui-icon-loading {
+        visibility: hidden;
     }
 }
 
@@ -1862,6 +1870,11 @@ Footer
 .ui-controlgroup-horizontal { padding: 0; }
 .ui-controlgroup-horizontal .ui-btn, .ui-controlgroup-horizontal .ui-select { display: inline-block; margin: 0 -5px 0 0; }
 .ui-controlgroup-horizontal .ui-checkbox, .ui-controlgroup-horizontal .ui-radio { float: left; margin: 0 -1px 0 0; }
+
+.ui-controlgroup-controls > .ui-checkbox,
+.ui-controlgroup-controls > .ui-radio {
+    padding-right: 25px;
+}
 
 /*
 Horizontal checkbox group
@@ -2408,7 +2421,7 @@ a.ui-slider-handle .ui-btn-inner { padding-left: 0; padding-right: 0; }
 }	
 
 div.ui-slider-switch {
-    height: 22px;
+    height: 18px;
     overflow: visible;
     margin-left: 0;
     width: 60px;
@@ -2449,7 +2462,7 @@ div.ui-slider-switch.ui-disabled span.ui-slider-label-a {
 div.ui-slider-switch a.ui-slider-handle {
     z-index: 5;
     width: 15px;
-    height: 30px;
+    height: 26px;
     margin-top: -6px;
     margin-left: -120%;
     background-color: white;

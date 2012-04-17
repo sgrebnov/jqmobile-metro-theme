@@ -19,7 +19,7 @@ Cordova.addConstructor(function () {
 
                 $('body')
                     .removeClass('ui-overlay-a ui-overlay-b ui-overlay-c ui-overlay-d ui-overlay-e')
-                    .addClass('ui-overlay-' + theme);
+                    .addClass('ui-overlay-' + themeSwatch);
 
                 $('.ui-btn').not('.ui-li-divider')
                     .removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
