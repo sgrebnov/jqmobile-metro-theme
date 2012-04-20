@@ -191,13 +191,12 @@ Horizontal checkbox group
 */
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-up-a.ui-btn, .ui-controlgroup-horizontal .ui-radio .ui-btn-up-a.ui-btn,
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-hover-a.ui-btn, .ui-controlgroup-horizontal .ui-radio .ui-btn-hover-a.ui-btn{
-    border: 2px solid white;
+    border: 0;
 }
 
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-up-a.ui-btn-active, .ui-controlgroup-horizontal .ui-radio .ui-btn-up-a.ui-btn-active,
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-hover-a.ui-btn-active, .ui-controlgroup-horizontal .ui-radio .ui-btn-hover-a.ui-btn-active{
-    background-color: white;
-    color: black;
+    color: white;
 }
 /*
 Dropbox
@@ -388,13 +387,12 @@ Horizontal checkbox group
 */
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-up-b.ui-btn-active,.ui-body-b .ui-controlgroup-horizontal .ui-radio .ui-btn-up-b.ui-btn-active,
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-hover-b.ui-btn-active,.ui-body-b .ui-controlgroup-horizontal .ui-radio .ui-btn-hover-b.ui-btn-active{
-    background-color: black;
-    color: white;
+    color: black;
 }
 
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-up-b.ui-btn,.ui-controlgroup-horizontal .ui-radio .ui-btn-up-b.ui-btn,
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-hover-b.ui-btn,.ui-controlgroup-horizontal .ui-radio .ui-btn-hover-b.ui-btn{
-    border: 2px solid black;
+    border: 0px;
 }
 
 /*
@@ -1111,21 +1109,26 @@ a.ui-link-inherit {
     background-position: 	-607px 50%;
 }
 
-.ui-icon-checkbox-off {
+.ui-icon-checkbox-off,
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn.ui-checkbox-off .ui-btn-inner
+{
 	background-position: 	-684px 50%;
 	background-image: none;
 }
-.ui-icon-checkbox-on {
+.ui-icon-checkbox-on,
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn.ui-checkbox-on .ui-btn-inner{
 	background-image: url(images/checkbox.png);
 	background-size: 18px 15px;	
 	background-position: 	50% 50%;
 	
 }
-.ui-icon-radio-off {
+.ui-icon-radio-off,
+.ui-controlgroup-horizontal .ui-radio .ui-btn.ui-icon-radio-off .ui-btn-inner{
 	background-position: 	-756px 50%;
 	background-image: none;
 }
-.ui-icon-radio-on {
+.ui-icon-radio-on,
+.ui-controlgroup-horizontal .ui-radio .ui-btn.ui-radio-on .ui-btn-inner{
 	background-image: url(images/radiobtn.png);
 	background-size: 10px 10px;
 	background-position: 	50% 50%;
@@ -1140,20 +1143,33 @@ a.ui-link-inherit {
 }
 
 /* checks,radios */
-.ui-checkbox .ui-icon, .ui-radio .ui-icon{
+.ui-checkbox .ui-icon, .ui-radio .ui-icon,
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn .ui-btn-inner,
+.ui-controlgroup-horizontal .ui-radio .ui-btn .ui-btn-inner{
 	border-radius: 0px;
 	height: 21px;
 	width: 21px;
 	left: 0px !important;
 	box-shadow: none;
+    background-repeat: no-repeat;
 }
 
-.ui-radio .ui-icon{
-	border-radius: .6em;
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn .ui-btn-inner,
+.ui-controlgroup-horizontal .ui-radio .ui-btn .ui-btn-inner{
+    width: 2px;
+    height: 16px;
+}
+
+.ui-radio .ui-icon,
+.ui-controlgroup-horizontal .ui-radio .ui-btn .ui-btn-inner{
+	border-radius: .6em !important;
 }
 
 .ui-icon-checkbox-off,.ui-icon-radio-off,
-.ui-checkbox-on .ui-icon,.ui-radio-on .ui-icon {
+.ui-checkbox-on .ui-icon,.ui-radio-on .ui-icon,
+.ui-controlgroup-horizontal .ui-checkbox .ui-btn .ui-btn-inner,
+.ui-controlgroup-horizontal .ui-radio .ui-btn .ui-btn-inner
+{
 	background-color: #cccccc;	
 }
 
@@ -1889,6 +1905,8 @@ Horizontal checkbox group
 */
 .ui-controlgroup-horizontal .ui-checkbox, .ui-controlgroup-horizontal .ui-radio{
     margin: 0px !important;
+    min-width: 70px;
+    overflow: hidden;
 }
 
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn, .ui-controlgroup-horizontal .ui-radio .ui-btn {
@@ -1896,15 +1914,16 @@ Horizontal checkbox group
 }
 
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-inner, .ui-controlgroup-horizontal .ui-radio .ui-btn-inner {
-
+    overflow:visible;
 }
 
 .ui-controlgroup-horizontal .ui-checkbox .ui-btn-text, .ui-controlgroup-horizontal .ui-radio .ui-btn-text {
-    margin-left: 0px;
+    margin-left: 20px;
+    max-width: 50px;
 }
 
 .ui-controlgroup-horizontal .ui-checkbox.ui-disabled .ui-btn, .ui-controlgroup-horizontal .ui-radio.ui-disabled .ui-btn {
-    border: 2px solid #808080;
+    border: 0px;
 }
 
 .ui-controlgroup-horizontal .ui-checkbox.ui-disabled .ui-btn.ui-checkbox-on, .ui-controlgroup-horizontal .ui-radio.ui-disabled .ui-btn.ui-radio-on {
