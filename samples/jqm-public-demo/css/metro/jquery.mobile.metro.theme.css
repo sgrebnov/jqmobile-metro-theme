@@ -253,9 +253,13 @@ div.ui-slider a.ui-slider-handle.ui-btn-hover-a .ui-btn-inner{
 	background-color: #373737;
 }
 
+div.ui-slider.ui-btn-down-a.ui-disabled{
+    background-color: #5f5f5f;
+}
+
 div.ui-slider.ui-disabled a.ui-slider-handle.ui-btn-up-a .ui-btn-inner,
 div.ui-slider.ui-disabled a.ui-slider-handle.ui-btn-hover-a .ui-btn-inner{
-	background-color: #202020;
+	background-color: #101010;
 }
 
 /*
@@ -446,6 +450,10 @@ div.ui-slider-switch.ui-btn-down-b.div.ui-slider-switch-a.ui-disabled div.ui-sli
 div.ui-slider a.ui-slider-handle.ui-btn-up-b .ui-btn-inner,
 div.ui-slider a.ui-slider-handle.ui-btn-hover-b .ui-btn-inner{
 	background-color: #bfbfbf;
+}
+
+div.ui-slider.ui-btn-down-b.ui-disabled{
+    background-color: #bfbfbf;
 }
 
 div.ui-slider.ui-disabled a.ui-slider-handle.ui-btn-up-b .ui-btn-inner,
@@ -2470,9 +2478,6 @@ div.ui-slider-switch a.ui-slider-handle {
 }
 
     /* Disabled state */
-div.ui-slider.ui-disabled{
-    background-color: #808080;
-}
 
 div.ui-slider-switch-b.ui-disabled div.ui-slider-labelbg-a {
     background-color: #808080;

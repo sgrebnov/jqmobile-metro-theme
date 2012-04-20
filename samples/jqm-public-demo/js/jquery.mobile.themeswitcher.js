@@ -115,7 +115,7 @@
             .removeClass('ui-overlay-a ui-overlay-b ui-overlay-c ui-overlay-d ui-overlay-e')
             .addClass('ui-overlay-' + theme);
 
-	    $('.ui-slider-switch')
+	    $('.ui-slider-switch, .ui-slider')
 		    .removeClass('ui-btn-down-a ui-btn-down-b ui-btn-down-c ui-btn-down-d ui-btn-down-e')
 		    .addClass('ui-btn-down-' + theme);
 

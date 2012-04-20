@@ -35,7 +35,7 @@ Cordova.addConstructor(function () {
                     }
                 })
 
-                $('.ui-slider-switch')
+                $('.ui-slider-switch, .ui-slider')
                     .removeClass('ui-btn-down-a ui-btn-down-b ui-btn-down-c ui-btn-down-d ui-btn-down-e')
                     .addClass('ui-btn-down-' + themeSwatch);
 
