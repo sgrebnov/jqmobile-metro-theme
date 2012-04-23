@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>jQMobile Metro Theme</title>
+
+    <link rel="stylesheet" href="css/metro/jquery.mobile.metro.theme.css"/>
+
+    <link href="css/progress-bar.css" rel="stylesheet" type="text/css" />
+    <link href="css/toggle-button.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        /* custom icons for toggle button*/
+        .ui-icon-demo-help,
+        .ui-icon-demo-set {
+            background-repeat: no-repeat;
+            background-position: 50% 50% ;
+            background-size: 30px 30px;
+        }
+
+        .ui-toggle-button-a .ui-icon-demo-set,
+        .ui-toggle-button-b[checked='checked'] .ui-icon-demo-set{
+            /*background-image: url(Images/set.dark.png) ;*/
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcFJREFUeNrsmYFtgzAQRQPKAIzgbkA28AiM0E7QjEAnSDYgG6QbwAZNJ2CE0AncO+ncnizbQsaqG+m+dAKMgXv4fD6Syhize2TVuweXAAiAAAiAAAiAAAiAACSoqqqggVqwHkzF+jnXpAnL6RQL3KsFu5tfDexcQ+cG3M/mR04AcsRVB6bAPlgbgnQ5AKrUDxo77OgcbBY4Xuj4DptmxS0OcM2NA6Ron2EeYZhg6FzI8TXOT9z5TdoSQrA9mrgwbEZnXtj2pvgc8DhmdaXQ4hO490DMtK9LAbQeiDEy2qER64tlIcowXIq99RONRsv6zx6AsSSAZo7MgbfN20+O8zP1TfKj3jD5FS1UPGQWth/KRl9s/wLZ6Ans/OdZKBLPigFeKTw69jy+oD0Xy0I0gb0ZKPKyOqfvz4pcKguFNHjyfBdJu22RUgIfbFdUDA2qQvl8eKetds5x3eAeh+TfaHMVcxjPZp1sRWpHQ/+LatSZnDHxdUJvfZF1pnoK4105zS9gb5EQxAp2KlrMuRBskTqy9sEZAZ3Tj83fA76vMqfOR4dfwT6pjJ5CAEl+yD80AiAAAiAAAiAAAiAAAlBM3wIMAG6WJmruRawzAAAAAElFTkSuQmCC);
+        }
+
+        .ui-toggle-button-b .ui-icon-demo-set,
+        .ui-toggle-button-a[checked='checked'] .ui-icon-demo-set{
+            /*background-image: url(Images/set.light.png);*/
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAalJREFUeNrsmYGNgzAMABv0AzACv0F+A0ZghO8E7Qj8BPwGdIOOABv0fwJGgJ8gb0vm5UaBVo37aSVbshQIEF/i2I4wzrnNM0u2eXJRAAVQAAVQAAVQAAVQAGExxljQGrS4OwGW01IKYkFH/Cxpy/py6muxLTamJAAZ6jytQHElTuweglQS45nYAw25yQTfmeh6pNm+JG/wzlesB70IeCG6BPr8gQy/xvhewvjoPQCyD7gMV3SbztsX8/08+R4IGDbrEf3e28B1AGKgdpkKwAYguhtWrE4WhSjCcGMKNusNrYZlzw8BgC4lQMkMGRZmm99vPOMRaH/r+FlM+ARtaZPOMrH2UjT6Ye0DGPEK+vnvUWjFnwvmWkcCrNh7PKG9J4tCtIGDEWjlncp7NjojS5cNfzWQH+fJ+KWwa5OF0QXXcKxwawJ9Z/ngIYo59OcLWdkHG2OTmDTA6UoAnifK2HEzoQNMTlGHyxb0YyX6YQXbP8yBhmVexxMTuQtfgVLy/GGkf3DgcZKXynCNmXoH+k1ldC86nv6hUQAFUAAFUAAFUAAFUIBk8ivAAJTba5LGeGkDAAAAAElFTkSuQmCC);
+        }
+
+    </style>
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile.js" type="text/javascript"></script>
+    <script src="js/jquery.globalstylesheet.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile.themeswitcher.js" type="text/javascript"></script>
+
+    <script src="js/progress-bar.js" type="text/javascript"></script>
+    <script src="js/toggle-button.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $.themesDir = 'css/';
+
+        $(function() {
+            $("#btn-dark").click(function(event) {
+                $.addTheme("Dark", false);
+                event.preventDefault();
+                return false;
+            });
+
+            $("#btn-light").click(function(event) {
+                $.addTheme("Light", false);
+                event.preventDefault();
+                return false;
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div data-role="page" class="type-interior" data-theme="a">
+<div data-role="header" data-theme="a">
+    <span class="ui-app-title">Be inspired by Metro</span>
+    <h1>Theme overview</h1>
+</div><!-- /header -->
+
+<div data-role="content" data-theme="a">
+<div class="content-primary">
+
+    <h2>Welcome</h2>
+
+    <p>The aim of this theme to provide metro-style user interface for web pages based on jquery mobile. While the theme itself adds all metro specific colors and fonts by default, please don't forget to follow <a
+                href="http://msdn.microsoft.com/en-us/library/hh202915(v=VS.92).aspx">metro principles</a>.</p>
+
+    <p>More details about the theme could be found on <a href="http://sgrebnov.github.com/jqmobile-metro-theme/" rel="external">home page</a>.</p>
+
+    <h2>Colors</h2>
+
+    <p>Dark and Light Windows Phone themes are supported via <a href="http://jquerymobile.com/demos/1.1.0/docs/api/themes.html">A and B color swatches</a>. You can try them using buttons below.</p>
+    <a id="btn-dark" href="#" data-role="button" >switch to dark</a>
+    <a id="btn-light" href="#" data-role="button" >switch to light</a>
+
+    <h2>Fonts</h2>
+
+    <p>This is a paragraph that contains <strong>strong</strong>, <em>emphasized</em> and <a href="../index.html"
+                                                                                             class="ui-link">linked</a>
+        text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis...</p>
+    <h6>h6/Small</h6>
+    <h5>h5/Normal</h5>
+    <h4>h4/Medium</h4>
+
+    <h3>h3/MediumLarge</h3>
+
+    <h2>h2/Large</h2>
+
+    <h1>h1/ExtraLarge</h1>
+
+<br/>
+<h2>Input controls</h2>
+<div data-role="fieldcontain">
+    <label for="name">Text Input</label>
+    <input type="text" name="name" id="name" value="" />
+</div>
+
+<div data-role="fieldcontain">
+    <label for="textarea">Textarea</label>
+    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+</div>
+
+<h2>Buttons</h2>
+<div data-role="fieldcontain">
+    <a href="#" data-role="button" data-inline="true">Sample button (content fit)</a>
+    <a href="#" data-role="button" >Sample button (container fit)</a>
+    <a href="#" data-role="button" data-icon="star" data-iconpos="right" >icon button</a>
+</div>
+<br/>
+
+<h2>Standard controls</h2>
+<br/>
+
+<label for="slider">Slider</label>
+<input type="range" name="slider" id="slider" value="7" min="0" max="100"  />
+
+<br/>
+<br/>
+
+<label for="slider2">Toggle switch</label>
+<select name="slider2" id="slider2" data-role="slider">
+    <option value="off">Off</option>
+    <option value="on">On</option>
+</select>
+
+<br/>
+<br/>
+
+<fieldset data-role="controlgroup">
+    <legend>Checkboxes</legend>
+    <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+    <label for="checkbox-1a">Cheetos</label>
+
+    <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" checked />
+    <label for="checkbox-2a">Doritos</label>
+</fieldset>
+
+
+
+<fieldset data-role="controlgroup">
+    <legend>Radiobuttons</legend>
+    <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" />
+    <label for="radio-choice-1">Cat</label>
+
+    <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2" checked="checked" />
+    <label for="radio-choice-2">Dog</label>
+</fieldset>
+
+
+    <label for="select-choice-1" class="select">Dropbox</label>
+    <select name="select-choice-1" id="select-choice-1" >
+        <option value="standard">Standard: 7 day</option>
+        <option value="rush">Rush: 3 days</option>
+        <option value="express">Express: next day</option>
+        <option value="overnight">Overnight</option>
+    </select>
+
+
+
+    <label for="select-choice-a" class="select">Custom menu</label>
+    <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+        <option>Custom menu example</option>
+        <option value="standard">Standard: 7 day</option>
+        <option value="rush">Rush: 3 days</option>
+        <option value="express">Express: next day</option>
+        <option value="overnight">Overnight</option>
+    </select>
+
+    <br/>
+    <br/>
+
+    <label for="list-view-1">Listbox</label></br>
+
+    <ul id="list-view-1" name="list-view-1" data-role="listview" data-inset="true">
+
+        <li class="ui-index" data-role="list-divider">a</li>
+        <li><a href="index.html"><img src="Images/empty.png" class="ui-li-icon" />Akura</a></li>
+        <li><a href="index.html"><img src="Images/empty.png" class="ui-li-icon" />Audi</a></li>
+        <li class="ui-index" data-role="list-divider">b</li>
+        <li><a href="index.html"><img src="Images/empty.png" class="ui-li-icon" />BMW</a></li>
+        <li class="ui-index" data-role="list-divider">c</li>
+        <li><a href="index.html"><img src="Images/empty.png" class="ui-li-icon" />Cadillac</a></li>
+        <li><a href="index.html"><img src="Images/empty.png" class="ui-li-icon" />Chrysler</a></li>
+    </ul>
+
+    <br/>
+    <h2>Other controls</h2>
+    <br/>
+    <h5>Toggle button</h5>
+    <a href="#" data-role="toggle-button" data-icon="demo-set" >toggle</a>
+    <br/>
+    <br/>
+    <h5>Progress bar</h5>
+    <div data-role='progress-bar' value='30' min='0' max='100' id="progressBar1"></div>
+</div><!--/content-primary -->
+
+</div><!-- /content -->
+
+</div><!-- /page -->
+</body>
+</html>
