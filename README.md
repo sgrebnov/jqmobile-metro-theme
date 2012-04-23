@@ -2,6 +2,20 @@
 
 Project aim is to build Metro UI HTML5-based theme on top of jQuery Mobile to mimic Windows Phone 7 native look and feel.
 
+### Live demo ###
+
+Theme web version (doesn’t fully reflect the device experience)
+
+http://sgrebnov.github.com/jqmobile-metro-theme/tests/basic/gallery/html/forms-all.html
+
+Web demo for the jquerymobile.com site
+
+http://sgrebnov.github.com/jqmobile-metro-theme/samples/jqm-public-demo/index.html
+
+Windows Phone demo app (restricted access)
+
+http://windowsphone.com/s?appid=f62a1b8b-b4db-4066-b825-1139e5b9f57a
+
 # Components #
 
 ### Metro theme ##
@@ -94,20 +108,5 @@ http://silverlight.codeplex.com/releases/view/71550#DownloadId=270984
     /samples/WindowsPhone/MetroThemeDemoApp/MetroThemeDemoApp.sln
 2. Update CordovaView.StartPageUri (MainPage.xaml) to reference to /tests/basic/gallery/html/forms-all.html located remotly.
 3. Build
-
-## Links ##
-
-Theme whe web version (doesn’t fully reflect the device experience)
-
-http://mshare.akvelon.net:8184/metro/tests/basic/gallery/html/forms-all.html
-
-Web demo for the jquerymobile.com site reference
-
-http://mshare.akvelon.net:8184/metro/samples/jqm-public-demo/index.html
-
-Windows Phone demo app (restricted access)
-
-http://windowsphone.com/s?appid=f62a1b8b-b4db-4066-b825-1139e5b9f57a
-
 
 
