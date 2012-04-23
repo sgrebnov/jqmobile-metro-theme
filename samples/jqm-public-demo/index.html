@@ -89,6 +89,11 @@
     <script type="text/javascript">
         $.themesDir = 'css/';
 
+        $().ready( function() {
+            if (!$.browser.msie) {
+                $("#noteIeRequired").show();
+            }});
+
         // allows to use the page in NON cordova environment
         if (typeof window.external.Notify !== "undefined") {
 
@@ -115,12 +120,6 @@
             sc5.src = "js/dateTimePicker.js";
             (head || document.body).appendChild(sc5);
         }
-
-        $().ready( function() {
-            if (!$.browser.msie) {
-               $("#noteIeRequired").show();
-            }});
-
 
     </script>
 
