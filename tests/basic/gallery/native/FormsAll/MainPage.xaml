@@ -1,0 +1,181 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="FormsAll.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:FormsAll"
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" d:DesignHeight="696" d:DesignWidth="480" Loaded="PhoneApplicationPage_Loaded" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps.Overlays;assembly=Microsoft.Phone.Controls.Maps" xmlns:my1="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,0">
+            <TextBlock x:Name="ApplicationTitle" Text="APP TITLE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="forms" Margin="12,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"  Width="Auto" HorizontalAlignment="Left" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>                        
+            <ScrollViewer Height="600">
+                <StackPanel>
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Name="formCaption" Text="Form elements" VerticalAlignment="Stretch" FontSize="{StaticResource PhoneFontSizeLarge}" Width="Auto" FontStretch="Normal" Margin="12,0,0,0" />
+                    <TextBlock Height="Auto" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="dummyParagraph" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." VerticalAlignment="Top" TextWrapping="Wrap" Width="Auto" />
+                    
+                    <TextBlock Margin="12,20,0,0" Text="h6/Small" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h5/Normal" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h4/Medium" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h3/MediumLarge" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h2/Large" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                    <TextBlock Margin="12,0,0,0" Text="h1/ExtraLarge" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                    
+                    
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="textInputLbl" Text="Text input" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <TextBox Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="textInput" Text="" VerticalAlignment="Top" Width="Auto" />
+                    
+                    <TextBlock Height="Auto"   HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="textAreaLbl" Text="Textarea" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeSmall}" />                    
+                    <TextBox Height="160" Name="textArea" Text="" AcceptsReturn="True" Width="Auto" TextWrapping="Wrap" />
+
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Text="Buttons" FontSize="{StaticResource PhoneFontSizeLarge}" />
+
+                    <Button Content="sample button" Height="Auto" HorizontalAlignment="Left" Margin="0" Name="casualButton" VerticalAlignment="Top" Width="Auto" />
+
+                    <Button Height="71" HorizontalAlignment="Left" Name="imageButton" Width="300" Padding="0" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal" Width="300">
+                            <TextBlock Name="imageButtonText" Text="right-icon button" Width="200" Margin="12,0,0,0" ManipulationStarted="imageButtonText_ManipulationStarted" ManipulationCompleted="imageButtonText_ManipulationCompleted" />
+                            <Image Source="Images/appbar.favs.rest.white.png" Name="imageButtonImage" />
+                        </StackPanel>
+                    </Button>
+
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="horizontSliderLbl" Text="Slider" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <Slider Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="slider" VerticalAlignment="Stretch" Width="Auto" Value="7" />
+                    <Slider Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="sliderDisabled" VerticalAlignment="Stretch" Width="Auto" IsEnabled="False" Value="3" />
+
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="searchLbl" Text="Search input" FontSize="{StaticResource PhoneFontSizeSmall}"  />
+                    <TextBox Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="search" Text="" VerticalAlignment="Top" Width="Auto" />                       
+                    
+                    <toolkit:ToggleSwitch Header="Switch" Height="Auto" Name="toggleSwitch1" Width="Auto" />
+                                       
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,0,0,0" Name="checkBoxLbl" Text="Checkboxes" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <CheckBox Content="Cheetos" Height="Auto" Name="checkBoxCheetos" />
+                    <CheckBox Content="Doritos" Height="Auto" Name="checkBoxDoritos" IsEnabled="False" IsChecked="True" />
+                    <CheckBox Content="Fritos" Height="Auto" Name="checkBoxFritos" />
+                    <CheckBox Content="Sun Chips" Height="Auto" Name="checkBoxDoritosSunChips" />
+                    
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="checkBoxHor" Text="Horizontal checkboxes" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Content="b" Height="Auto" Name="checkBoxB" Grid.Column="0" />
+                        <CheckBox Content="i" Height="Auto" Name="checkBoxI" Grid.Column="1"/>
+                        <CheckBox Content="u" Height="Auto" Name="checkBoxU" Grid.Column="2" />
+                    </Grid>
+                    
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="radioButtonLbl" Text="Radiobuttons" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <RadioButton Content="Cat" Height="Auto" Name="radioButtonCat" />
+                    <RadioButton Content="Dog" Height="Auto" Name="radioButtonDog" IsEnabled="False" IsChecked="True" />
+                    <RadioButton Content="Hamster" Height="Auto" Name="radioButtonHamster" />
+                    <RadioButton Content="Lizard" Height="Auto" Name="radioButtonLizard" />
+                    
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="radioButtonHor" Text="Horizontal radiobuttons" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition></ColumnDefinition>
+                           <ColumnDefinition></ColumnDefinition>
+                           <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton Content="List" Height="Auto" Name="radioButtonList" Grid.Column="0" />
+                        <RadioButton Content="Grid" Height="Auto" Name="radioButtonGrid" Grid.Column="1"/>
+                        <RadioButton Content="Galley" Height="Auto" Name="radioButtonGallery" Grid.Column="2" />
+                    </Grid>
+                    
+                    <toolkit:ListPicker Height="Auto" Name="listPicker1" Width="Auto" Header="Dropbox (few items)" SelectionMode="Single" />
+
+
+
+                    <toolkit:ListPicker Height="Auto" Name="listPicker2" Width="Auto" Header="Dropbox (many items)" SelectionMode="Single" >
+                        <toolkit:ListPicker.FullModeItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiLight}" Margin="0,0,0,20"></TextBlock>
+                            </DataTemplate>
+                        </toolkit:ListPicker.FullModeItemTemplate>
+                    </toolkit:ListPicker>
+
+
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Name="listBoxLbl" Text="Listbox" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                    <ListBox Height="Auto" Name="listBox" Width="250" Margin="12,0,0,0" SelectionMode="Extended" HorizontalAlignment="Left">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                                <local:DividerTemplateSelector Content="{Binding}">                                    
+                                    <local:DividerTemplateSelector.DividerSelector>                                        
+                                        <DataTemplate>
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.Background>
+                                                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+                                                    </SolidColorBrush>
+                                                </Grid.Background>
+                                                <TextBlock Text="{Binding Title}" Foreground="White" Width="50" Height="50" FontSize="{StaticResource PhoneFontSizeLarge}" />                                                
+                                            </Grid>                                            
+                                        </DataTemplate>                                        
+                                    </local:DividerTemplateSelector.DividerSelector>
+
+                                    <local:DividerTemplateSelector.ItemSelector>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                                <Image Source="{Binding Image}" Height="50" Width="50" />
+                                                <TextBlock Text="{Binding Title}" Grid.Row="0" Margin="12,0,0,0" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </local:DividerTemplateSelector.ItemSelector>
+                                </local:DividerTemplateSelector>   
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,20,0,0" Text="Dialogs" FontSize="{StaticResource PhoneFontSizeLarge}" />
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,0,0,0" Text="Notifications:" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                        <HyperlinkButton Click="hyperlinkButton1_Click" HorizontalAlignment="Left" Content="Show Me Message" Name="hyperlinkButton1" Width="Auto" NavigateUri="#" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Height="Auto" HorizontalAlignment="Stretch" Margin="12,0,0,0" Text="Dialog box:" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                        <HyperlinkButton HorizontalAlignment="Left" Click="hyperlinkButton2_Click" Content="Open dialog" Name="hyperlinkButton2" Width="Auto" NavigateUri="#" />
+                    </StackPanel>
+
+                    <Button Content="plugins" Click="Button_Click"></Button>
+                    <Button Content="not implemented controls" Click="Button_Click_1"></Button>
+                             
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>        
+    </Grid>
+ 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.add.rest.png" Text="Add"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.minus.rest.png" Text="Remove"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta content="text/html; charset=utf-8"/>
+	<title>Progress bar</title>
+</head>
+<body>
+
+	<div data-role="page" class="type-interior" data-theme="a">
+		<div data-role="header" data-theme="a" data-position="fixed">
+            <span class="ui-app-title">Be inspired by Metro</span>
+		    <h1>Progress bar</h1>
+	    </div>
+
+	<div data-role="content" data-theme="a">
+
+        <form id="testform">
+
+           <div data-role="fieldcontain" >
+                <label>Progress bar</label>
+                <div data-role='progress-bar' value='50' min='0' max='100' id="progressBar1"></div>
+                <fieldset style="display: inline;margin-bottom: 3px;">
+                    <input type="checkbox" id="check1"/>
+                    <label for="check1">indeterminate</label>
+                </fieldset>
+                <br/>
+                <a href="#" data-inline="true" data-role="button" id="getValBtn">simulate progress</a>
+
+                <br/>
+                <h6>use slider to change progress bar value</h6>
+                <div id="div-slider">
+                    <input type="range" name="slider" value="50" min="0" max="100" id='slider1' />
+                </div>
+                <br/>
+                <label>Progress bar (indeterminate)</label>
+                <div data-role='progress-bar' indeterminate='true' value='1' min='0' max='100' id="progressBar2"></div>
+                <br/>
+            </div>
+
+        </form>
+        <script  type="text/javascript">
+            $(function() {
+
+                var timerId = null;
+
+                $("#div-slider").change(function () {
+                    if(timerId){
+                        clearInterval(timerId);
+                        timerId = null;
+                    }
+                    var val = $("#slider1").val();
+                    $('#progressBar1').data('progressbar').value($("#slider1").val());
+
+                });
+
+                $('#getValBtn').click(function () {
+                    if(timerId){
+                        clearInterval(timerId);
+                        timerId = null;
+                        return;
+                    }
+                    $('#progressBar1').data('progressbar').value(0);
+                    timerId = setInterval(function(){
+                        var value = $('#progressBar1').data('progressbar').value();
+                        if(value>=100){
+                            clearInterval(timerId);
+                            timerId = null;
+                        }
+                        $('#progressBar1').data('progressbar').value(value+1);
+                    },50)
+                });
+
+                var indeterm = true;
+                $('#check1').click(function () {
+                    $('#progressBar1').data('progressbar').indeterminate(indeterm);
+                    indeterm = !indeterm;
+                });
+
+            });
+        </script>
+    </div>
+</div>
+</body>
+</html>

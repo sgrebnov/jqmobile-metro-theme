@@ -1,0 +1,1 @@
+www folder is empty because we use reference to remote location; all html content is located there

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>All-html</title>
+
+    <link rel="stylesheet"  href="../../themes/metro/jquery.mobile.metro.theme.css" />
+    <link href="../../plugins/date-picker/css/mobiscroll-1.5.3.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugins/app-bar/css/app-bar.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugins/progress-bar/css/progress-bar.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugins/toggle-button/css/toggle-button.css" rel="stylesheet" type="text/css" />
+    <script src="../../jqmobile-core/jquery.js"></script>
+    <script src="../../jqmobile-core/jquery.mobile.js"></script>
+    <script src="../../plugins/date-picker/js/mobiscroll-1.5.3.js" type="text/javascript"></script>
+    <script src="../../plugins/app-bar/js/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="../../plugins/app-bar/js/app-bar.js" type="text/javascript"></script>
+    <script src="../../plugins/progress-bar/js/progress-bar.js" type="text/javascript"></script>
+    <script src="../../plugins/toggle-button/js/toggle-button.js" type="text/javascript"></script>
+    <script src="../../themes/themeswitcher/jquery.globalstylesheet.js"></script>
+
+    <script type="text/javascript">
+
+        // provide our own console if it does not exist, huge dev aid!
+        if (typeof window.console == "undefined") {
+            window.console = { log: function (str) { window.external.Notify(str); } };
+        }
+
+        // output any errors to console log, created above.
+        window.onerror = function (e) {
+            console.log("window.onerror ::" + JSON.stringify(e));
+        };
+
+        console.log("Installed console ! ");
+
+	// allows to use the page in NON Cordova environment
+	if (typeof window.external.Notify !== "undefined") {
+
+        console.log("Linking Cordova..");
+	
+        var head = document.getElementsByTagName("head")[0];
+	
+        var sc1 = document.createElement("script");
+        sc1.src = "../../cordova/cordova-1.5.0.js";
+        (head || document.body).appendChild(sc1);
+
+        console.log("Linking phoneTheme plugin..");
+
+        var sc4 = document.createElement("script");
+        sc4.src = "../../cordova/phoneTheme.js";
+        (head || document.body).appendChild(sc4);
+
+        console.log("Linking jqueryThemeSwitch..");
+
+        var sc2 = document.createElement("script");
+        sc2.src = "../../cordova/jquery.cordova.metro.themeswitcher.js";
+        (head || document.body).appendChild(sc2);
+
+        console.log("Linking dateTimePicker..");
+
+	var sc3 = document.createElement("script");
+        sc3.src = "../../cordova/dateTimePicker.js";
+        (head || document.body).appendChild(sc3);
+
+        console.log("Linking backButtonHandler..");
+
+        var sc5 = document.createElement("script");
+        sc5.src = "../../cordova/backButtonHandler.js";
+        (head || document.body).appendChild(sc5);
+
+	}
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Date with external button
+            $('#date1').scroller({ mode: 'clickpick' });
+            // Time
+            $('#date2').scroller({ preset: 'time',mode: 'clickpick' });
+
+            var timerId = null;
+
+            $("#div-slider").change(function () {
+                if(timerId){
+                    clearInterval(timerId);
+                    timerId = null;
+                }
+                var val = $("#slider1").val();
+                $('#progressBar1').data('progressbar').value($("#slider1").val());
+
+            });
+
+            $('#getValBtn').click(function () {
+                if(timerId){
+                    clearInterval(timerId);
+                    timerId = null;
+                    return;
+                }
+                $('#progressBar1').data('progressbar').value(0);
+                timerId = setInterval(function(){
+                    var value = $('#progressBar1').data('progressbar').value();
+                    if(value>=100){
+                        clearInterval(timerId);
+                        timerId = null;
+                    }
+                    $('#progressBar1').data('progressbar').value(value+1);
+                },50)
+            });
+
+            var indeterm = true;
+            $('#check1').click(function () {
+                $('#progressBar1').data('progressbar').indeterminate(indeterm);
+                indeterm = !indeterm;
+            });
+
+        });
+
+
+
+    </script>
+
+    <style type="text/css">
+
+        .ui-icon-demo-help,
+        .ui-icon-demo-set {
+            background-repeat: no-repeat;
+            background-position: 50% 50% ;
+            background-size: 30px 30px;
+        }
+
+        .ui-icon-plus {
+            background-position: 5px 50% ;
+        }
+        .ui-icon-minus {
+            background-position: -30px 50% ;
+        }
+
+        .ui-app-bar-a .ui-icon-plus,
+        .ui-app-bar-a .ui-icon-minus
+        {
+            background-image: url(../../themes/metro/images/icons-18-white.png);
+        }
+
+        .ui-app-bar-b .ui-icon-plus,
+        .ui-app-bar-b .ui-icon-minus
+        {
+            background-image: url(../../themes/metro/images/icons-18-black.png);
+        }
+
+        .ui-toggle-button-a .ui-icon-demo-set,
+        .ui-toggle-button-b[checked='checked'] .ui-icon-demo-set{
+            /*background-image: url(Images/set.dark.png) ;*/
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcFJREFUeNrsmYFtgzAQRQPKAIzgbkA28AiM0E7QjEAnSDYgG6QbwAZNJ2CE0AncO+ncnizbQsaqG+m+dAKMgXv4fD6Syhize2TVuweXAAiAAAiAAAiAAAiAACSoqqqggVqwHkzF+jnXpAnL6RQL3KsFu5tfDexcQ+cG3M/mR04AcsRVB6bAPlgbgnQ5AKrUDxo77OgcbBY4Xuj4DptmxS0OcM2NA6Ron2EeYZhg6FzI8TXOT9z5TdoSQrA9mrgwbEZnXtj2pvgc8DhmdaXQ4hO490DMtK9LAbQeiDEy2qER64tlIcowXIq99RONRsv6zx6AsSSAZo7MgbfN20+O8zP1TfKj3jD5FS1UPGQWth/KRl9s/wLZ6Ans/OdZKBLPigFeKTw69jy+oD0Xy0I0gb0ZKPKyOqfvz4pcKguFNHjyfBdJu22RUgIfbFdUDA2qQvl8eKetds5x3eAeh+TfaHMVcxjPZp1sRWpHQ/+LatSZnDHxdUJvfZF1pnoK4105zS9gb5EQxAp2KlrMuRBskTqy9sEZAZ3Tj83fA76vMqfOR4dfwT6pjJ5CAEl+yD80AiAAAiAAAiAAAiAAAlBM3wIMAG6WJmruRawzAAAAAElFTkSuQmCC);
+        }
+
+        .ui-toggle-button-b .ui-icon-demo-set,
+        .ui-toggle-button-a[checked='checked'] .ui-icon-demo-set{
+            /*background-image: url(Images/set.light.png);*/
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAalJREFUeNrsmYGNgzAMABv0AzACv0F+A0ZghO8E7Qj8BPwGdIOOABv0fwJGgJ8gb0vm5UaBVo37aSVbshQIEF/i2I4wzrnNM0u2eXJRAAVQAAVQAAVQAAVQAGExxljQGrS4OwGW01IKYkFH/Cxpy/py6muxLTamJAAZ6jytQHElTuweglQS45nYAw25yQTfmeh6pNm+JG/wzlesB70IeCG6BPr8gQy/xvhewvjoPQCyD7gMV3SbztsX8/08+R4IGDbrEf3e28B1AGKgdpkKwAYguhtWrE4WhSjCcGMKNusNrYZlzw8BgC4lQMkMGRZmm99vPOMRaH/r+FlM+ARtaZPOMrH2UjT6Ye0DGPEK+vnvUWjFnwvmWkcCrNh7PKG9J4tCtIGDEWjlncp7NjojS5cNfzWQH+fJ+KWwa5OF0QXXcKxwawJ9Z/ngIYo59OcLWdkHG2OTmDTA6UoAnifK2HEzoQNMTlGHyxb0YyX6YQXbP8yBhmVexxMTuQtfgVLy/GGkf3DgcZKXynCNmXoH+k1ldC86nv6hUQAFUAAFUAAFUAAFUIBk8ivAAJTba5LGeGkDAAAAAElFTkSuQmCC);
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div data-role="page" data-theme="a" id="jqm-home">
+        <div data-role="header" data-theme="a">
+            <span class="ui-app-title">plugins</span>
+            <h1>Extra controls</h1>
+        </div>
+
+        <div data-role="content" data-theme="a">
+            <form id="testform">
+
+                <div data-role="fieldcontain">
+                    <label for="date1">Date</label>
+                    <input type="text" name="date1" id="date1" />
+                    </br>
+                    <label for="date2">Time</label>
+                    <input type="text" name="date2" id="date2" />
+                </div>
+                <div data-role="fieldcontain" >
+                    <label>Progress bar</label>
+                    <div data-role='progress-bar' value='50' min='0' max='100' id="progressBar1"></div>
+                    <fieldset style="display: inline;margin-bottom: 3px; ">
+                        <input type="checkbox" id="check1"/>
+                        <label for="check1">indeterminate</label>
+                    </fieldset>
+                    <br/>
+                    <a href="#" data-inline="true" data-role="button" id="getValBtn">simulate progress</a>
+
+                    <br/>
+                    <h6>use slider to change progress bar value</h6>
+                    <div id="div-slider">
+                        <input type="range" name="slider" value="50" min="0" max="100" id='slider1' />
+                    </div>
+                    <br/>
+                    <label>Progress bar (indeterminate)</label>
+                    <div data-role='progress-bar' indeterminate='true' value='1' min='0' max='100' id="progressBar2"></div>
+                    <br/>
+                </div>
+                <label>Toggle button</label>
+                <br/>
+                <a href="#" data-role="toggle-button" data-icon="demo-set" >sample</a>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+            </form>
+        </div>
+
+        <div data-role='app-bar' >
+            <a href='#' data-icon='plus' >help</a>
+            <a href='#' data-icon='minus' >settings</a>
+
+            <ul>
+                <li><a href='#'>Menu Item 1</a></li>
+                <li><a href='#'>Menu Item 2</a></li>
+                <li><a href='#'>Menu Item 3</a></li>
+                <li><a href='#'>Menu Item 4</a></li>
+                <li><a href='#'>Menu Item 5</a></li>
+                <li><a href='#'>Menu Item 6</a></li>
+                <li><a href='#'>Menu Item 7</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

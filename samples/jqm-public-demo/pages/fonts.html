@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8"/>
+    <title>Fonts and colors</title>
+</head>
+<body>
+
+<div data-role="page" class="type-interior" data-theme="a">
+    <div data-role="header" data-theme="a" data-position="fixed">
+        <span class="ui-app-title">Be inspired by Metro</span>
+
+        <h1>Colors and fonts</h1>
+    </div>
+
+    <div data-role="content" data-theme="a">
+
+        <h2>Colors</h2>
+
+        <p>Dark and Light Windows Phone themes are supported via <a href="http://jquerymobile.com/demos/1.1.0/docs/api/themes.html">A and B color swatches</a>. When viewing on the phone under Cordova framework all system colors are automatically applied via <a href="pages/switcher.html">Theme Switcher plugin</a></p>
+        <a id="btn-dark" href="#" data-role="button" >switch to dark</a>
+        <a id="btn-light" href="#" data-role="button" >switch to light</a>
+
+        <h2>Fonts</h2>
+
+        <p>This is a paragraph that contains <strong>strong</strong>, <em>emphasized</em> and <a href="../index.html"
+                                                                                                 class="ui-link">linked</a>
+            text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis...</p>
+        <h6>h6/Small</h6>
+        <h5>h5/Normal</h5>
+        <h4>h4/Medium</h4>
+
+        <h3>h3/MediumLarge</h3>
+
+        <h2>h2/Large</h2>
+
+        <h1>h1/ExtraLarge</h1>
+
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            $("#btn-dark").click(function(event) {
+                $.addTheme("Dark", false);
+                event.preventDefault();
+                return false;
+            });
+
+            $("#btn-light").click(function(event) {
+                $.addTheme("Light", false);
+                event.preventDefault();
+                return false;
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

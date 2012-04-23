@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8"/>
+    <title>DateTime Picker</title>
+</head>
+<body>
+
+<div data-role="page" class="type-interior" data-theme="a">
+    <div data-role="header" data-theme="a" data-position="fixed">
+        <span class="ui-app-title">Be inspired by Metro</span>
+
+        <h1>DateTime Picker</h1>
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <form id="testform">
+
+            <div data-role="fieldcontain">
+                <label for="date1">Date</label>
+                <input type="text" name="date1" id="date1"  readonly="1"/>
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="date2">Time</label>
+                <input type="text" name="date2" id="date2" readonly="1"/>
+            </div>
+
+            When running on Cordova, html datetime picker is repalced by Windows Phone native
+            <a href="http://windowsphonegeek.com/articles/wp7-datepicker-and-timepicker-in-depth--api-and-customization">DatePicker or TimePicker</a>. Additional details are available 
+            <a href="https://github.com/">here</a>
+        </form>
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                // Date with external button
+                $('#date1').scroller({ mode: 'clickpick' });
+                // Time
+                $('#date2').scroller({ preset: 'time',mode: 'clickpick' });
+            });
+        </script>
+
+
+    </div>
+</div>
+</body>
+</html>
