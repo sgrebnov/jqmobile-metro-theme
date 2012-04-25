@@ -1375,6 +1375,31 @@ div.ui-mobile-viewport { overflow-x: hidden; }
         opacity: 1;
     }
 }
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade.out {
+    opacity: 0;
+    -webkit-animation-duration: 125ms;
+    -webkit-animation-name: fadeout;
+    -moz-animation-duration: 125ms;
+    -moz-animation-name: fadeout;
+}
+.fade.in {
+    opacity: 1;
+    -webkit-animation-duration: 225ms;
+    -webkit-animation-name: fadein;
+    -moz-animation-duration: 225ms;
+    -moz-animation-name: fadein;
+}
+
 @-moz-keyframes popin {
     from {
         -moz-transform: scale(.8);
@@ -2603,4 +2628,3 @@ span.ui-slider-label-b {
     background-color: green;
     border: 2px solid black;
 }
-
