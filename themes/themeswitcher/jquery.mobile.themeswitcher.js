@@ -137,6 +137,11 @@
         // toggle button fix
         $('.ui-toggle-button').removeClass('ui-toggle-button-a ui-toggle-button-b').addClass('ui-toggle-button-' + theme);
 
+        // update dialog overlay
+        if ($.mobile.activePage) {
+            $.mobile.activePage.removeClass('ui-overlay-a ui-overlay-b ui-overlay-c ui-overlay-d ui-overlay-e').addClass('ui-overlay-'+theme);
+        }
+
 
         if (isSystem)
         {
@@ -159,9 +164,6 @@
         {
             $.enableStylesheet("globalStyleSheet", false);
         }
-
-	    // We need to replace dialog overlay class according to current theme
-		 $.mobile.activePage.removeClass('ui-overlay-a ui-overlay-b').addClass('ui-overlay-'+theme);
 
     }
 
