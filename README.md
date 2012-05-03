@@ -1,20 +1,16 @@
 # Welcome #
 
-Project aim is to build Metro UI HTML5-based theme on top of jQuery Mobile to mimic Windows Phone 7 native look and feel.
+The aim of this theme to provide a Metro user interface for Cordova apps using jQuery Mobile on Windows Phone 7.5.
 
 ### Live demo ###
-
-Theme web version (doesn’t fully reflect the device experience)
-
-http://sgrebnov.github.com/jqmobile-metro-theme/tests/basic/gallery/html/forms-all.html
 
 Web demo for the jquerymobile.com site
 
 http://sgrebnov.github.com/jqmobile-metro-theme/samples/jqm-public-demo/index.html
 
-Windows Phone demo app (restricted access)
+Windows Phone demo app
 
-http://windowsphone.com/s?appid=f62a1b8b-b4db-4066-b825-1139e5b9f57a
+http://windowsphone.com/s?appid=tbd
 
 # Components #
 
@@ -28,10 +24,9 @@ Metro theme is presented by jquery.mobile.metro.theme.css file and related image
 
 All additional theme plugins are located at /plugins folder
 
-    /plugins/app-bar/ - Windows Phone alike ApplicationBar control
+    /plugins/app-bar/ - an Application Bar
 
-    /plugins/date-picker/ - Date and Time picker. Note: if runs under Cordova environment and there is Cordova DateTimePicker
-    plugin then it uses native UI instead of html
+    /plugins/date-picker/ - - Cordova plugin for WP that exposes the native DateTime picker
 
     /plugins/progress-bar/ - implements porgress bar control
 
@@ -45,7 +40,7 @@ There is also special js code exporting theme switching functionality located at
 
 ### Cordova ###
 
-The theme provides additional level of functionality when viewing on the phone under Cordova framework. This is implemented
+The jQM Metro theme is designed to work with Cordova on Windows Phone 7.5 for optimal integration. This is implemented
 by the following cordova plugins.
 
 backButtonHandler.js - hardware back button handling functionality
@@ -79,10 +74,10 @@ This sample page demonstrates all metro theme additional plugins/controls descib
 
 Note. Pages above are used as a reference for Windows Phone demo application.
 
-## Prerequisite (Windows Phone only) ##
-(No actions are required to run html samples and test pages.)
-
-Silverlight for Windows Phone Toolkit is required to build
+## Prerequisite ##
+The following componets are required for optimal theme work
+Cordova App on Windows Phone 7.5
+Silverlight for Windows Phone Toolkit
 http://silverlight.codeplex.com/releases/view/71550#DownloadId=270984
 
 # Usage #

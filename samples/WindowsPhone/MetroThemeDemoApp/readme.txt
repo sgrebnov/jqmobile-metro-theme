@@ -18,10 +18,10 @@ Silverlight for Windows Phone Toolkit is required to build the application
 http://silverlight.codeplex.com/releases/view/71550#DownloadId=270984
 
 License
-/*
- * This plugin is available under *either* the terms of the modified BSD license *or* the
- * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
- *
- * Copyright (c) 2011-2012, Sergey Grebnov
- * Copyright (c) 2011-2012, Microsoft Corporation
- */
+
+Licensed under the Apache License, Version 2.0 (the "License")
+
+http://www.apache.org/licenses/LICENSE-2.0 
+
+Copyright (c) 2011-2012, Sergey Grebnov
+

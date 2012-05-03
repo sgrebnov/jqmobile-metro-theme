@@ -17,6 +17,10 @@ Cordova.addConstructor(function () {
 
                 // based on http://stackoverflow.com/questions/8656801/how-to-change-theme-dynamically-in-jquery-mobile
 
+                $('body')
+                    .removeClass('ui-overlay-a ui-overlay-b ui-overlay-c ui-overlay-d ui-overlay-e')
+                    .addClass('ui-overlay-' + themeSwatch);
+
                 $('.ui-btn').not('.ui-li-divider')
                     .removeClass('ui-btn-up-a ui-btn-up-b ui-btn-up-c ui-btn-up-d ui-btn-up-e ui-btn-hover-a ui-btn-hover-b ui-btn-hover-c ui-btn-hover-d ui-btn-hover-e')
                     .addClass('ui-btn-up-' + themeSwatch)
@@ -31,7 +35,7 @@ Cordova.addConstructor(function () {
                     }
                 })
 
-                $('.ui-slider-switch')
+                $('.ui-slider-switch, .ui-slider')
                     .removeClass('ui-btn-down-a ui-btn-down-b ui-btn-down-c ui-btn-down-d ui-btn-down-e')
                     .addClass('ui-btn-down-' + themeSwatch);
 
@@ -50,7 +54,7 @@ Cordova.addConstructor(function () {
                     .addClass('ui-body-' + themeSwatch)
                     .attr('data-theme', themeSwatch);
 
-		// toggle button fix
+                // toggle button fix
                 $('.ui-toggle-button').removeClass('ui-toggle-button-a ui-toggle-button-b').addClass('ui-toggle-button-' + themeSwatch);
 
 
@@ -59,9 +63,8 @@ Cordova.addConstructor(function () {
                 $(".ui-btn-active a.ui-link-inherit").globalcss('color', theme.accentColor + ' !important');
                 $(".ui-selectmenu-list li[aria-selected='true'] .ui-btn-text a").globalcss('color', theme.accentColor + ' !important');
                 $(".ui-li-divider").globalcss('background-color', theme.accentColor + ' !important');
-                $("div.ui-slider-switch").globalcss('background-color', 'transparent !important');
-                $("div.ui-slider").globalcss('background-color', theme.accentColor + ' !important');
-                $("div.ui-slider-switch div.ui-slider-labelbg-a").globalcss('background-color', theme.accentColor + ' !important');
+                $("div.ui-slider:not(.ui-disabled):not(.ui-slider-switch)").globalcss('background-color', theme.accentColor + ' !important');
+                $("div.ui-slider-switch span.ui-slider-label-a").globalcss('background-color', theme.accentColor + ' !important');
                 $(".ui-progress-bg").globalcss('background-color', theme.accentColor + ' !important');
                 $(".ui-progress-value").globalcss('background-color', theme.accentColor + ' !important');
             }

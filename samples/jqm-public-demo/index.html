@@ -93,7 +93,13 @@
         $().ready( function() {
             if (!$.browser.msie) {
                 $("#noteIeRequired").show();
-            }});
+            }
+
+            // special title when run in Cordova environment
+            if (typeof window.external.Notify !== "undefined") {
+                document.getElementById("appTitle").innerHTML = "Theme overview";
+            }
+        });
 
         // allows to use the page in NON cordova environment
         if (typeof window.external.Notify !== "undefined") {
@@ -130,7 +136,7 @@
     <div data-role="header" data-theme="a" data-position="fixed">
         <span class="ui-app-title">Be inspired by Metro</span>
 
-        <h1>Theme overview</h1>
+        <h1 id="appTitle">jQuery Mobile Metro Theme for WP 7.5</h1>
     </div>
 
     <div data-role="content" data-theme="a" style="min-height: 105% !important">
@@ -138,7 +144,7 @@
 
             <h2>Welcome</h2>
 
-            <p>The aim of this theme to provide metro-style user interface for web pages based on jquery mobile.</p>
+            <p style="font-weight: bold">The aim of this theme to provide a Metro user interface for Cordova apps using jQuery Mobile on Windows Phone 7.5.</p>
             <p>While the theme itself adds all metro specific colors
                 and fonts by default, please don't forget to follow <a
                         href="http://msdn.microsoft.com/en-us/library/hh202915(v=VS.92).aspx">metro
@@ -165,16 +171,16 @@
                 <li><a href="pages/progress-bar.html">Progress bar</a></li>
                 <li><a href="pages/appbar.html">Application bar</a></li>
                 <li><a href="pages/toggle.html">Toggle button</a></li>
-                <li><a href="pages/date-time.html">DateTime Picker (Cordova)</a></li>
-                <li><a href="pages/switcher.html">Theme Switcher (Cordova)</a></li>
+                <li><a href="pages/date-time.html">DateTime Picker (Viewable only from a Cordova app on Windows Phone 7.5)</a></li>
+                <li><a href="pages/switcher.html">Theme Switcher (Viewable only from a Cordova app on Windows Phone 7.5)</a></li>
 
             </ul>
             
             <h2>Try Different Themes</h2>
             <br/>
-            Use the following button to switch between Dark and Light theme
+            Use the following button to switch between Windows Phone Dark and Light themes, and the original jQueryMobile theme
             <div id="jqm-themeswitcher"></div>
-            <h5>Cordova special: when viewing on the phone all system colors are automatically applied via <a href="pages/switcher.html">Theme Switcher plugin</a></li></h5>
+            <h5>When viewed via a Cordova app on Windows Phone 7.5 all system colors will be automatically applied via <a href="pages/switcher.html">Theme Switcher plugin</a></li></h5>
             <br/>
             <h2>Links</h2>
             <br/>
