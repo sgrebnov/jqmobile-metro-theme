@@ -16,28 +16,33 @@
     <div data-role="content" data-theme="a">
         <form id="testform">
 
-            <div data-role="fieldcontain">
+            <div class="datetime-picker" data-role="fieldcontain">
                 <label for="date1">Date</label>
                 <input type="text" name="date1" id="date1"  readonly="1"/>
             </div>
 
-            <div data-role="fieldcontain">
+            <div class="datetime-picker" data-role="fieldcontain">
                 <label for="date2">Time</label>
                 <input type="text" name="date2" id="date2" readonly="1"/>
             </div>
 
-            When running on Cordova, html datetime picker is repalced by Windows Phone native
-            <a href="http://windowsphonegeek.com/articles/wp7-datepicker-and-timepicker-in-depth--api-and-customization">DatePicker or TimePicker</a>. Additional details are available 
+            The jQueryMobile Metro theme exposes the native Windows Phone 7.5 DateTime pickers using a Cordova plugin. These controls are only viewable from a Cordova App on Windows Phone 7.5. Additional details are available
             <a href="http://sgrebnov.github.com/jqmobile-metro-theme/" rel="external">here</a>.
         </form>
 
         <script type="text/javascript">
 
             $(document).ready(function () {
-                // Date with external button
-                $('#date1').scroller({ mode: 'clickpick' });
-                // Time
-                $('#date2').scroller({ preset: 'time',mode: 'clickpick' });
+                // cordova environment
+                if(navigator.plugins && typeof navigator.plugins.dateTimePicker !== "undefined"){
+                    // Date with external button
+                    $('#date1').scroller({ mode: 'clickpick' });
+                    // Time
+                    $('#date2').scroller({ preset: 'time',mode: 'clickpick' });
+                } else {
+                    $('.datetime-picker').hide();
+
+                }
             });
         </script>
 

@@ -1,9 +1,8 @@
 ﻿/*
- * This plugin is available under *either* the terms of the modified BSD license *or* the
- * MIT License (2008). See http://opensource.org/licenses/alphabetical for full text.
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * http://www.apache.org/licenses/LICENSE-2.0 
  *
  * Copyright (c) 2011-2012, Sergey Grebnov
- * Copyright (c) 2011-2012, Microsoft Corporation
  */
 
 using System.Runtime.Serialization;

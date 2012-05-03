@@ -6,7 +6,7 @@
     <FilePath Value="www\jquery.cordova.metro.themeswitcher.js"/>
     <FilePath Value="www\jquery.globalstylesheet.js"/>
     <FilePath Value="www\jquery.js"/>
-    <FilePath Value="www\jquery.mobile-1.0.js"/>
+    <FilePath Value="www\jquery.mobile.js"/>
     <FilePath Value="www\master.css"/>
     <FilePath Value="www\phoneTheme.js"/>
     <FilePath Value="www\themes\metro\jquery.mobile.metro.theme.css"/>
