@@ -1,6 +1,6 @@
 # Welcome #
 
-The aim of this theme to provide a Metro user interface for Cordova apps using jQuery Mobile on Windows Phone 7.5.
+This theme provides a Metro user interface for Cordova apps using jQuery Mobile on Windows Phone 7.5.
 
 ### Live demo ###
 
