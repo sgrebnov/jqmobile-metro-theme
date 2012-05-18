@@ -27,9 +27,9 @@ http://windowsphone.com/s?appid=tbd
 
 # Components #
 
-### Metro theme ##
+### jQM theme for Windows Phone ##
 
-Metro theme is presented by jquery.mobile.metro.theme.css file and related images folder.
+jQM theme for Windows Phone is presented by jquery.mobile.metro.theme.css file and related images folder.
 
     /themes/metro/
 
@@ -53,7 +53,7 @@ There is also special js code exporting theme switching functionality located at
 
 ### Cordova ###
 
-The jQM Metro theme is designed to work with Cordova on Windows Phone 7.5 for optimal integration. This is implemented
+The jQM theme for Windows Phone is designed to work with Cordova on Windows Phone 7.5 for optimal integration. This is implemented
 by the following cordova plugins.
 
 backButtonHandler.js - hardware back button handling functionality
@@ -81,7 +81,7 @@ jQuery Mobile gallery sample page (with some little modifications). Contains bot
 
     /tests/basic/gallery/
 
-This sample page demonstrates all metro theme additional plugins/controls descibed above ('Additional plugins' section). Html only verison.
+This sample page demonstrates all jQM theme for Windows Phone additional plugins/controls descibed above ('Additional plugins' section). Html only verison.
 
     /tests/extra/all.html
 
