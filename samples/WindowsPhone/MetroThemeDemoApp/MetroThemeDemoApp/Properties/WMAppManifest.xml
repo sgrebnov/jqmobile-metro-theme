@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{0a188757-9ca5-4e35-baf2-e1f0dde76985}" Title="Metro Theme Demo" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="MetroThemeDemoApp author" Description="PhoneGap for Windows Phone 7" Publisher="MetroThemeDemoApp">
+  <App xmlns="" ProductID="{0a188757-9ca5-4e35-baf2-e1f0dde76985}" Title="jQM theme for Windows Phone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="MetroThemeDemoApp author" Description="PhoneGap for Windows Phone 7" Publisher="MetroThemeDemoApp">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
@@ -17,7 +17,7 @@
         <TemplateType5>
           <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>Metro Theme Demo</Title>
+          <Title>jQM theme for Windows Phone</Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>

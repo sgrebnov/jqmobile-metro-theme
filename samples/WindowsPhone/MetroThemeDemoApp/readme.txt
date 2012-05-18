@@ -1,4 +1,4 @@
-Application demonstrates additional jQueryMobile Metro theme features when running under Cordova framework. 
+Application demonstrates additional jQM theme for Windows Phone features when running under Cordova framework. 
 https://github.com/cordova
 
 Please note, that www folder is empty because we reference to remote server where all content (html, js, css) is stored. Please see CordovaView.StartPageUri for more details.
